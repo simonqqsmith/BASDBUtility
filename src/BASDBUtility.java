@@ -42,7 +42,7 @@ public class BASDBUtility extends JFrame
 	        public void actionPerformed(ActionEvent e) {
 	            Runtime runtime = Runtime.getRuntime();
 	            try {
-	                runtime.exec("cmd.exe /C start " + workingdir + "\\hot_backup.cmd");
+	                runtime.exec("cmd.exe /C start " + workingdir + "\\scripts\\hot_backup.cmd");
 	            } catch (IOException e1) {
 	                e1.printStackTrace();
 	            }
@@ -60,7 +60,7 @@ public class BASDBUtility extends JFrame
         public void actionPerformed(ActionEvent e) {
             Runtime runtime = Runtime.getRuntime();
             try {
-                runtime.exec("cmd.exe /C start " + workingdir + "\\refresh.cmd");
+                runtime.exec("cmd.exe /C start " + workingdir + "\\scripts\\refresh.cmd");
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -78,7 +78,7 @@ public class BASDBUtility extends JFrame
         public void actionPerformed(ActionEvent e) {
             Runtime runtime = Runtime.getRuntime();
             try {
-                runtime.exec("cmd.exe /C start " + workingdir + "\\snapshot.cmd");
+                runtime.exec("cmd.exe /C start " + workingdir + "\\scripts\\snapshot.cmd");
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -96,7 +96,7 @@ public class BASDBUtility extends JFrame
         public void actionPerformed(ActionEvent e) {
             Runtime runtime = Runtime.getRuntime();
             try {
-                runtime.exec("cmd.exe /C start " + workingdir + "\\restore_snapshot.cmd");
+                runtime.exec("cmd.exe /C start " + workingdir + "\\scripts\\restore_snapshot.cmd");
             } catch (IOException e1) {
                 e1.printStackTrace();
             }

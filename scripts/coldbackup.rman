@@ -1,0 +1,20 @@
+connect target /
+sql 'alter system set dbwr_io_slaves=4 scope=spfile';
+sql 'alter system checkpoint';
+shutdown immediate;
+startup mount;
+sql "create pfile=''&1\pfile&2..ora'' from spfile";
+RUN {
+ALLOCATE CHANNEL disk1 DEVICE TYPE DISK FORMAT '&1\%U';
+ALLOCATE CHANNEL disk2 DEVICE TYPE DISK FORMAT '&1\%U';
+ALLOCATE CHANNEL disk3 DEVICE TYPE DISK FORMAT '&1\%U';
+ALLOCATE CHANNEL disk4 DEVICE TYPE DISK FORMAT '&1\%U';
+BACKUP AS COMPRESSED BACKUPSET DATABASE;
+BACKUP CURRENT CONTROLFILE FORMAT '&1\cntrl_%s_%p_%t';
+RELEASE CHANNEL disk1;
+RELEASE CHANNEL disk2;
+RELEASE CHANNEL disk3;
+RELEASE CHANNEL disk4;
+}
+sql 'alter database open';
+exit
