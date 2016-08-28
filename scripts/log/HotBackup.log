@@ -1,0 +1,3170 @@
+Recovery Manager: Release 11.2.0.1.0 - Production on Sun Aug 28 12:20:49 2016
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: ORCL (DBID=1435453232)
+
+RMAN> run{
+2> backup current controlfile format 'C:\app\oracle\flash_recovery_area\orcl\refresh\C_%d%T%t';
+3> ALLOCATE CHANNEL disk1 DEVICE TYPE DISK FORMAT 'C:\app\oracle\flash_recovery_area\orcl\refresh\%U';
+4> ALLOCATE CHANNEL disk2 DEVICE TYPE DISK FORMAT 'C:\app\oracle\flash_recovery_area\orcl\refresh\%U';
+5> ALLOCATE CHANNEL disk3 DEVICE TYPE DISK FORMAT 'C:\app\oracle\flash_recovery_area\orcl\refresh\%U';
+6> ALLOCATE CHANNEL disk4 DEVICE TYPE DISK FORMAT 'C:\app\oracle\flash_recovery_area\orcl\refresh\%U';
+7> backup as compressed backupset database plus archivelog;
+8> RELEASE CHANNEL disk1;
+9> RELEASE CHANNEL disk2;
+10> RELEASE CHANNEL disk3;
+11> RELEASE CHANNEL disk4;
+12> }
+13> list backup;
+14> exit
+Starting backup at 28-AUG-16
+using target database control file instead of recovery catalog
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=143 device type=DISK
+channel ORA_DISK_1: starting full datafile backup set
+channel ORA_DISK_1: specifying datafile(s) in backup set
+including current control file in backup set
+channel ORA_DISK_1: starting piece 1 at 28-AUG-16
+channel ORA_DISK_1: finished piece 1 at 28-AUG-16
+piece handle=C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\C_ORCL20160828921068452 tag=TAG20160828T122052 comment=NONE
+channel ORA_DISK_1: backup set complete, elapsed time: 00:00:01
+Finished backup at 28-AUG-16
+
+Starting Control File and SPFILE Autobackup at 28-AUG-16
+piece handle=C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_28\O1_MF_S_921068455_CW4LN84B_.BKP comment=NONE
+Finished Control File and SPFILE Autobackup at 28-AUG-16
+
+released channel: ORA_DISK_1
+allocated channel: disk1
+channel disk1: SID=143 device type=DISK
+
+allocated channel: disk2
+channel disk2: SID=21 device type=DISK
+
+allocated channel: disk3
+channel disk3: SID=145 device type=DISK
+
+allocated channel: disk4
+channel disk4: SID=23 device type=DISK
+
+
+Starting backup at 28-AUG-16
+current log archived
+channel disk1: starting compressed archived log backup set
+channel disk1: specifying archived log(s) in backup set
+input archived log thread=1 sequence=31 RECID=29 STAMP=912369788
+input archived log thread=1 sequence=32 RECID=30 STAMP=912369814
+input archived log thread=1 sequence=33 RECID=31 STAMP=912370007
+input archived log thread=1 sequence=34 RECID=32 STAMP=914239257
+channel disk1: starting piece 1 at 28-AUG-16
+channel disk2: starting compressed archived log backup set
+channel disk2: specifying archived log(s) in backup set
+input archived log thread=1 sequence=35 RECID=33 STAMP=915047110
+input archived log thread=1 sequence=36 RECID=34 STAMP=919936519
+input archived log thread=1 sequence=37 RECID=35 STAMP=919937783
+input archived log thread=1 sequence=38 RECID=36 STAMP=919937905
+input archived log thread=1 sequence=39 RECID=37 STAMP=919939542
+input archived log thread=1 sequence=40 RECID=38 STAMP=919939544
+input archived log thread=1 sequence=41 RECID=39 STAMP=919939547
+input archived log thread=1 sequence=42 RECID=40 STAMP=919939553
+input archived log thread=1 sequence=43 RECID=41 STAMP=919939555
+input archived log thread=1 sequence=44 RECID=42 STAMP=919939559
+input archived log thread=1 sequence=45 RECID=43 STAMP=919939562
+input archived log thread=1 sequence=46 RECID=44 STAMP=919939566
+input archived log thread=1 sequence=47 RECID=45 STAMP=920066600
+input archived log thread=1 sequence=48 RECID=46 STAMP=920067376
+channel disk2: starting piece 1 at 28-AUG-16
+channel disk3: starting compressed archived log backup set
+channel disk3: specifying archived log(s) in backup set
+input archived log thread=1 sequence=49 RECID=47 STAMP=920813334
+input archived log thread=1 sequence=50 RECID=48 STAMP=920844044
+input archived log thread=1 sequence=51 RECID=49 STAMP=920896175
+input archived log thread=1 sequence=52 RECID=50 STAMP=920904303
+input archived log thread=1 sequence=53 RECID=51 STAMP=920904420
+input archived log thread=1 sequence=54 RECID=52 STAMP=920904668
+input archived log thread=1 sequence=55 RECID=53 STAMP=920904788
+input archived log thread=1 sequence=56 RECID=54 STAMP=920949605
+input archived log thread=1 sequence=57 RECID=55 STAMP=920977235
+channel disk3: starting piece 1 at 28-AUG-16
+channel disk4: starting compressed archived log backup set
+channel disk4: specifying archived log(s) in backup set
+input archived log thread=1 sequence=58 RECID=56 STAMP=920978412
+input archived log thread=1 sequence=59 RECID=57 STAMP=920978560
+input archived log thread=1 sequence=60 RECID=58 STAMP=920979533
+input archived log thread=1 sequence=61 RECID=59 STAMP=920979659
+input archived log thread=1 sequence=62 RECID=60 STAMP=920979735
+input archived log thread=1 sequence=63 RECID=61 STAMP=920979866
+input archived log thread=1 sequence=64 RECID=62 STAMP=920980417
+input archived log thread=1 sequence=65 RECID=63 STAMP=920980547
+input archived log thread=1 sequence=66 RECID=64 STAMP=920980961
+input archived log thread=1 sequence=67 RECID=65 STAMP=920981093
+input archived log thread=1 sequence=68 RECID=66 STAMP=921003036
+input archived log thread=1 sequence=69 RECID=67 STAMP=921045621
+input archived log thread=1 sequence=70 RECID=68 STAMP=921063118
+input archived log thread=1 sequence=71 RECID=69 STAMP=921063238
+channel disk4: starting piece 1 at 28-AUG-16
+channel disk1: finished piece 1 at 28-AUG-16
+piece handle=C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\81RECOTD_1_1 tag=TAG20160828T122100 comment=NONE
+channel disk1: backup set complete, elapsed time: 00:00:20
+channel disk1: starting compressed archived log backup set
+channel disk1: specifying archived log(s) in backup set
+input archived log thread=1 sequence=72 RECID=70 STAMP=921063909
+input archived log thread=1 sequence=73 RECID=71 STAMP=921064026
+input archived log thread=1 sequence=74 RECID=72 STAMP=921064330
+input archived log thread=1 sequence=75 RECID=73 STAMP=921064435
+input archived log thread=1 sequence=76 RECID=74 STAMP=921065379
+input archived log thread=1 sequence=77 RECID=75 STAMP=921065488
+input archived log thread=1 sequence=78 RECID=76 STAMP=921066456
+input archived log thread=1 sequence=79 RECID=77 STAMP=921066566
+input archived log thread=1 sequence=80 RECID=78 STAMP=921066836
+input archived log thread=1 sequence=81 RECID=79 STAMP=921066935
+input archived log thread=1 sequence=82 RECID=80 STAMP=921067096
+input archived log thread=1 sequence=83 RECID=81 STAMP=921067194
+input archived log thread=1 sequence=84 RECID=82 STAMP=921067732
+input archived log thread=1 sequence=85 RECID=83 STAMP=921067829
+channel disk1: starting piece 1 at 28-AUG-16
+channel disk2: finished piece 1 at 28-AUG-16
+piece handle=C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\82RECOTE_1_1 tag=TAG20160828T122100 comment=NONE
+channel disk2: backup set complete, elapsed time: 00:00:22
+channel disk2: starting compressed archived log backup set
+channel disk2: specifying archived log(s) in backup set
+input archived log thread=1 sequence=86 RECID=84 STAMP=921068459
+channel disk2: starting piece 1 at 28-AUG-16
+channel disk3: finished piece 1 at 28-AUG-16
+piece handle=C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\83RECOTJ_1_1 tag=TAG20160828T122100 comment=NONE
+channel disk3: backup set complete, elapsed time: 00:00:19
+channel disk2: finished piece 1 at 28-AUG-16
+piece handle=C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\86RECOUA_1_1 tag=TAG20160828T122100 comment=NONE
+channel disk2: backup set complete, elapsed time: 00:00:01
+channel disk4: finished piece 1 at 28-AUG-16
+piece handle=C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\84RECOTO_1_1 tag=TAG20160828T122100 comment=NONE
+channel disk4: backup set complete, elapsed time: 00:00:10
+channel disk1: finished piece 1 at 28-AUG-16
+piece handle=C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\85RECOU2_1_1 tag=TAG20160828T122100 comment=NONE
+channel disk1: backup set complete, elapsed time: 00:00:05
+Finished backup at 28-AUG-16
+
+Starting backup at 28-AUG-16
+channel disk1: starting compressed full datafile backup set
+channel disk1: specifying datafile(s) in backup set
+input datafile file number=00001 name=C:\APP\ORACLE\ORADATA\ORCL\SYSTEM01.DBF
+channel disk1: starting piece 1 at 28-AUG-16
+channel disk2: starting compressed full datafile backup set
+channel disk2: specifying datafile(s) in backup set
+input datafile file number=00002 name=C:\APP\ORACLE\ORADATA\ORCL\SYSAUX01.DBF
+channel disk2: starting piece 1 at 28-AUG-16
+channel disk3: starting compressed full datafile backup set
+channel disk3: specifying datafile(s) in backup set
+input datafile file number=00003 name=C:\APP\ORACLE\ORADATA\ORCL\UNDOTBS01.DBF
+channel disk3: starting piece 1 at 28-AUG-16
+channel disk4: starting compressed full datafile backup set
+channel disk4: specifying datafile(s) in backup set
+input datafile file number=00004 name=C:\APP\ORACLE\ORADATA\ORCL\USERS01.DBF
+channel disk4: starting piece 1 at 28-AUG-16
+channel disk3: finished piece 1 at 28-AUG-16
+piece handle=C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\89RECOUF_1_1 tag=TAG20160828T122134 comment=NONE
+channel disk3: backup set complete, elapsed time: 00:00:07
+channel disk4: finished piece 1 at 28-AUG-16
+piece handle=C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\8ARECOUH_1_1 tag=TAG20160828T122134 comment=NONE
+channel disk4: backup set complete, elapsed time: 00:00:08
+channel disk2: finished piece 1 at 28-AUG-16
+piece handle=C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\88RECOUF_1_1 tag=TAG20160828T122134 comment=NONE
+channel disk2: backup set complete, elapsed time: 00:00:34
+channel disk1: finished piece 1 at 28-AUG-16
+piece handle=C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\87RECOUF_1_1 tag=TAG20160828T122134 comment=NONE
+channel disk1: backup set complete, elapsed time: 00:00:54
+Finished backup at 28-AUG-16
+
+Starting backup at 28-AUG-16
+current log archived
+channel disk1: starting compressed archived log backup set
+channel disk1: specifying archived log(s) in backup set
+input archived log thread=1 sequence=87 RECID=85 STAMP=921068549
+channel disk1: starting piece 1 at 28-AUG-16
+channel disk1: finished piece 1 at 28-AUG-16
+piece handle=C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\8BRECP05_1_1 tag=TAG20160828T122229 comment=NONE
+channel disk1: backup set complete, elapsed time: 00:00:01
+Finished backup at 28-AUG-16
+
+Starting Control File and SPFILE Autobackup at 28-AUG-16
+piece handle=C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_28\O1_MF_S_921068551_CW4LQ8D4_.BKP comment=NONE
+Finished Control File and SPFILE Autobackup at 28-AUG-16
+
+released channel: disk1
+
+released channel: disk2
+
+released channel: disk3
+
+released channel: disk4
+
+
+List of Backup Sets
+===================
+
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+46      Full    9.36M      DISK        00:00:02     26-AUG-16      
+        BP Key: 46   Status: AVAILABLE  Compressed: NO  Tag: TAG20160826T144455
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\C_ORCL20160826920904295
+  Control File Included: Ckp SCN: 1535134      Ckp time: 26-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+47      Full    9.39M      DISK        00:00:02     26-AUG-16      
+        BP Key: 47   Status: AVAILABLE  Compressed: NO  Tag: TAG20160826T144458
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_26\O1_MF_S_920904298_CVZLBCVM_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1535141      Ckp time: 26-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+48      77.57M     DISK        00:00:29     26-AUG-16      
+        BP Key: 48   Status: AVAILABLE  Compressed: YES  Tag: TAG20160826T144504
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\1NRE7OJJ_1_1
+
+  List of Archived Logs in backup set 48
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    8       963611     28-MAR-16 978923     20-MAY-16
+  1    9       978923     20-MAY-16 980582     20-MAY-16
+  1    10      980582     20-MAY-16 990070     20-MAY-16
+  1    11      990070     20-MAY-16 1014745    20-MAY-16
+  1    12      1014745    20-MAY-16 1034494    20-MAY-16
+  1    13      1034494    20-MAY-16 1036226    20-MAY-16
+  1    14      1036226    20-MAY-16 1060722    20-MAY-16
+  1    15      1060722    20-MAY-16 1079257    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+49      94.78M     DISK        00:00:43     26-AUG-16      
+        BP Key: 49   Status: AVAILABLE  Compressed: YES  Tag: TAG20160826T144504
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\1ORE7OJJ_1_1
+
+  List of Archived Logs in backup set 49
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    16      1079257    20-MAY-16 1099400    20-MAY-16
+  1    17      1099400    20-MAY-16 1114387    20-MAY-16
+  1    18      1114387    20-MAY-16 1128076    20-MAY-16
+  1    19      1128076    20-MAY-16 1143302    20-MAY-16
+  1    20      1143302    20-MAY-16 1163440    20-MAY-16
+  1    21      1163440    20-MAY-16 1195966    20-MAY-16
+  1    22      1195966    20-MAY-16 1220110    20-MAY-16
+  1    23      1220110    20-MAY-16 1240231    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+50      34.90M     DISK        00:00:37     26-AUG-16      
+        BP Key: 50   Status: AVAILABLE  Compressed: YES  Tag: TAG20160826T144504
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\1QRE7OK1_1_1
+
+  List of Archived Logs in backup set 50
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    32      1317531    20-MAY-16 1320796    20-MAY-16
+  1    33      1320796    20-MAY-16 1340284    20-MAY-16
+  1    34      1340284    20-MAY-16 1378231    11-JUN-16
+  1    35      1378231    11-JUN-16 1399093    20-JUN-16
+  1    36      1399093    20-JUN-16 1408192    15-AUG-16
+  1    37      1408192    15-AUG-16 1408879    15-AUG-16
+  1    38      1408879    15-AUG-16 1408934    15-AUG-16
+  1    39      1408934    15-AUG-16 1409973    15-AUG-16
+  1    40      1409973    15-AUG-16 1409990    15-AUG-16
+  1    41      1409990    15-AUG-16 1409993    15-AUG-16
+  1    42      1409993    15-AUG-16 1409997    15-AUG-16
+  1    43      1409997    15-AUG-16 1410000    15-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+51      81.89M     DISK        00:00:49     26-AUG-16      
+        BP Key: 51   Status: AVAILABLE  Compressed: YES  Tag: TAG20160826T144504
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\1PRE7OJL_1_1
+
+  List of Archived Logs in backup set 51
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    24      1240231    20-MAY-16 1251503    20-MAY-16
+  1    25      1251503    20-MAY-16 1261778    20-MAY-16
+  1    26      1261778    20-MAY-16 1268308    20-MAY-16
+  1    27      1268308    20-MAY-16 1278022    20-MAY-16
+  1    28      1278022    20-MAY-16 1299593    20-MAY-16
+  1    29      1299593    20-MAY-16 1310713    20-MAY-16
+  1    30      1310713    20-MAY-16 1314902    20-MAY-16
+  1    31      1314902    20-MAY-16 1317531    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+52      46.46M     DISK        00:00:25     26-AUG-16      
+        BP Key: 52   Status: AVAILABLE  Compressed: YES  Tag: TAG20160826T144504
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\1RRE7OKK_1_1
+
+  List of Archived Logs in backup set 52
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    44      1410000    15-AUG-16 1410003    15-AUG-16
+  1    45      1410003    15-AUG-16 1410006    15-AUG-16
+  1    46      1410006    15-AUG-16 1410009    15-AUG-16
+  1    47      1410009    15-AUG-16 1435443    16-AUG-16
+  1    48      1435443    16-AUG-16 1443895    16-AUG-16
+  1    49      1443895    16-AUG-16 1478565    25-AUG-16
+  1    50      1478565    25-AUG-16 1504366    25-AUG-16
+  1    51      1504366    25-AUG-16 1531209    26-AUG-16
+  1    52      1531209    26-AUG-16 1535185    26-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+53      Full    1.16M      DISK        00:00:08     26-AUG-16      
+        BP Key: 53   Status: AVAILABLE  Compressed: YES  Tag: TAG20160826T144608
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\1URE7OLH_1_1
+  List of Datafiles in backup set 53
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  3       Full 1535215    26-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\UNDOTBS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+54      Full    1.02M      DISK        00:00:10     26-AUG-16      
+        BP Key: 54   Status: AVAILABLE  Compressed: YES  Tag: TAG20160826T144608
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\1VRE7OLI_1_1
+  List of Datafiles in backup set 54
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  4       Full 1535217    26-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\USERS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+55      Full    70.95M     DISK        00:00:26     26-AUG-16      
+        BP Key: 55   Status: AVAILABLE  Compressed: YES  Tag: TAG20160826T144608
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\1TRE7OLH_1_1
+  List of Datafiles in backup set 55
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  2       Full 1535213    26-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSAUX01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+56      Full    183.73M    DISK        00:00:44     26-AUG-16      
+        BP Key: 56   Status: AVAILABLE  Compressed: YES  Tag: TAG20160826T144608
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\1SRE7OLH_1_1
+  List of Datafiles in backup set 56
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  1       Full 1535212    26-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSTEM01.DBF
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+57      2.50K      DISK        00:00:00     26-AUG-16      
+        BP Key: 57   Status: AVAILABLE  Compressed: YES  Tag: TAG20160826T144700
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\20RE7ON4_1_1
+
+  List of Archived Logs in backup set 57
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    53      1535185    26-AUG-16 1535236    26-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+58      Full    9.39M      DISK        00:00:03     26-AUG-16      
+        BP Key: 58   Status: AVAILABLE  Compressed: NO  Tag: TAG20160826T144701
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_26\O1_MF_S_920904421_CVZLG7B0_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1535245      Ckp time: 26-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+59      Full    9.36M      DISK        00:00:02     26-AUG-16      
+        BP Key: 59   Status: AVAILABLE  Compressed: NO  Tag: TAG20160826T145101
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\C_ORCL20160826920904661
+  Control File Included: Ckp SCN: 1535391      Ckp time: 26-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+60      Full    9.39M      DISK        00:00:02     26-AUG-16      
+        BP Key: 60   Status: AVAILABLE  Compressed: NO  Tag: TAG20160826T145103
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_26\O1_MF_S_920904663_CVZLOS1B_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1535398      Ckp time: 26-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+61      77.57M     DISK        00:00:32     26-AUG-16      
+        BP Key: 61   Status: AVAILABLE  Compressed: YES  Tag: TAG20160826T145108
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\24RE7OUU_1_1
+
+  List of Archived Logs in backup set 61
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    8       963611     28-MAR-16 978923     20-MAY-16
+  1    9       978923     20-MAY-16 980582     20-MAY-16
+  1    10      980582     20-MAY-16 990070     20-MAY-16
+  1    11      990070     20-MAY-16 1014745    20-MAY-16
+  1    12      1014745    20-MAY-16 1034494    20-MAY-16
+  1    13      1034494    20-MAY-16 1036226    20-MAY-16
+  1    14      1036226    20-MAY-16 1060722    20-MAY-16
+  1    15      1060722    20-MAY-16 1079257    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+62      94.78M     DISK        00:00:38     26-AUG-16      
+        BP Key: 62   Status: AVAILABLE  Compressed: YES  Tag: TAG20160826T145108
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\25RE7OUU_1_1
+
+  List of Archived Logs in backup set 62
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    16      1079257    20-MAY-16 1099400    20-MAY-16
+  1    17      1099400    20-MAY-16 1114387    20-MAY-16
+  1    18      1114387    20-MAY-16 1128076    20-MAY-16
+  1    19      1128076    20-MAY-16 1143302    20-MAY-16
+  1    20      1143302    20-MAY-16 1163440    20-MAY-16
+  1    21      1163440    20-MAY-16 1195966    20-MAY-16
+  1    22      1195966    20-MAY-16 1220110    20-MAY-16
+  1    23      1220110    20-MAY-16 1240231    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+63      81.89M     DISK        00:00:44     26-AUG-16      
+        BP Key: 63   Status: AVAILABLE  Compressed: YES  Tag: TAG20160826T145108
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\26RE7OV2_1_1
+
+  List of Archived Logs in backup set 63
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    24      1240231    20-MAY-16 1251503    20-MAY-16
+  1    25      1251503    20-MAY-16 1261778    20-MAY-16
+  1    26      1261778    20-MAY-16 1268308    20-MAY-16
+  1    27      1268308    20-MAY-16 1278022    20-MAY-16
+  1    28      1278022    20-MAY-16 1299593    20-MAY-16
+  1    29      1299593    20-MAY-16 1310713    20-MAY-16
+  1    30      1310713    20-MAY-16 1314902    20-MAY-16
+  1    31      1314902    20-MAY-16 1317531    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+64      34.90M     DISK        00:00:36     26-AUG-16      
+        BP Key: 64   Status: AVAILABLE  Compressed: YES  Tag: TAG20160826T145108
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\27RE7OVG_1_1
+
+  List of Archived Logs in backup set 64
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    32      1317531    20-MAY-16 1320796    20-MAY-16
+  1    33      1320796    20-MAY-16 1340284    20-MAY-16
+  1    34      1340284    20-MAY-16 1378231    11-JUN-16
+  1    35      1378231    11-JUN-16 1399093    20-JUN-16
+  1    36      1399093    20-JUN-16 1408192    15-AUG-16
+  1    37      1408192    15-AUG-16 1408879    15-AUG-16
+  1    38      1408879    15-AUG-16 1408934    15-AUG-16
+  1    39      1408934    15-AUG-16 1409973    15-AUG-16
+  1    40      1409973    15-AUG-16 1409990    15-AUG-16
+  1    41      1409990    15-AUG-16 1409993    15-AUG-16
+  1    42      1409993    15-AUG-16 1409997    15-AUG-16
+  1    43      1409997    15-AUG-16 1410000    15-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+65      46.46M     DISK        00:00:21     26-AUG-16      
+        BP Key: 65   Status: AVAILABLE  Compressed: YES  Tag: TAG20160826T145108
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\28RE7P06_1_1
+
+  List of Archived Logs in backup set 65
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    44      1410000    15-AUG-16 1410003    15-AUG-16
+  1    45      1410003    15-AUG-16 1410006    15-AUG-16
+  1    46      1410006    15-AUG-16 1410009    15-AUG-16
+  1    47      1410009    15-AUG-16 1435443    16-AUG-16
+  1    48      1435443    16-AUG-16 1443895    16-AUG-16
+  1    49      1443895    16-AUG-16 1478565    25-AUG-16
+  1    50      1478565    25-AUG-16 1504366    25-AUG-16
+  1    51      1504366    25-AUG-16 1531209    26-AUG-16
+  1    52      1531209    26-AUG-16 1535185    26-AUG-16
+  1    53      1535185    26-AUG-16 1535236    26-AUG-16
+  1    54      1535236    26-AUG-16 1535439    26-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+66      Full    1.16M      DISK        00:00:11     26-AUG-16      
+        BP Key: 66   Status: AVAILABLE  Compressed: YES  Tag: TAG20160826T145212
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\2BRE7P0T_1_1
+  List of Datafiles in backup set 66
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  3       Full 1535469    26-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\UNDOTBS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+67      Full    1.02M      DISK        00:00:16     26-AUG-16      
+        BP Key: 67   Status: AVAILABLE  Compressed: YES  Tag: TAG20160826T145212
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\2CRE7P10_1_1
+  List of Datafiles in backup set 67
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  4       Full 1535472    26-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\USERS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+68      Full    70.95M     DISK        00:00:28     26-AUG-16      
+        BP Key: 68   Status: AVAILABLE  Compressed: YES  Tag: TAG20160826T145212
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\2ARE7P0T_1_1
+  List of Datafiles in backup set 68
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  2       Full 1535467    26-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSAUX01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+69      Full    183.73M    DISK        00:00:47     26-AUG-16      
+        BP Key: 69   Status: AVAILABLE  Compressed: YES  Tag: TAG20160826T145212
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\29RE7P0S_1_1
+  List of Datafiles in backup set 69
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  1       Full 1535466    26-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSTEM01.DBF
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+70      3.00K      DISK        00:00:01     26-AUG-16      
+        BP Key: 70   Status: AVAILABLE  Compressed: YES  Tag: TAG20160826T145308
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\2DRE7P2K_1_1
+
+  List of Archived Logs in backup set 70
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    55      1535439    26-AUG-16 1535492    26-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+71      Full    9.39M      DISK        00:00:02     26-AUG-16      
+        BP Key: 71   Status: AVAILABLE  Compressed: NO  Tag: TAG20160826T145310
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_26\O1_MF_S_920904790_CVZLSQC5_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1535501      Ckp time: 26-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+72      Full    9.36M      DISK        00:00:01     27-AUG-16      
+        BP Key: 72   Status: AVAILABLE  Compressed: NO  Tag: TAG20160827T112004
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\C_ORCL20160827920978405
+  Control File Included: Ckp SCN: 1587550      Ckp time: 27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+73      Full    9.39M      DISK        00:00:02     27-AUG-16      
+        BP Key: 73   Status: AVAILABLE  Compressed: NO  Tag: TAG20160827T112007
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_27\O1_MF_S_920978407_CW1TP8KS_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1587557      Ckp time: 27-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+74      90.82M     DISK        00:00:42     27-AUG-16      
+        BP Key: 74   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T112012
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\2HREA0VG_1_1
+
+  List of Archived Logs in backup set 74
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    8       963611     28-MAR-16 978923     20-MAY-16
+  1    9       978923     20-MAY-16 980582     20-MAY-16
+  1    10      980582     20-MAY-16 990070     20-MAY-16
+  1    11      990070     20-MAY-16 1014745    20-MAY-16
+  1    12      1014745    20-MAY-16 1034494    20-MAY-16
+  1    13      1034494    20-MAY-16 1036226    20-MAY-16
+  1    14      1036226    20-MAY-16 1060722    20-MAY-16
+  1    15      1060722    20-MAY-16 1079257    20-MAY-16
+  1    16      1079257    20-MAY-16 1099400    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+75      106.26M    DISK        00:00:54     27-AUG-16      
+        BP Key: 75   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T112012
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\2IREA0VG_1_1
+
+  List of Archived Logs in backup set 75
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    17      1099400    20-MAY-16 1114387    20-MAY-16
+  1    18      1114387    20-MAY-16 1128076    20-MAY-16
+  1    19      1128076    20-MAY-16 1143302    20-MAY-16
+  1    20      1143302    20-MAY-16 1163440    20-MAY-16
+  1    21      1163440    20-MAY-16 1195966    20-MAY-16
+  1    22      1195966    20-MAY-16 1220110    20-MAY-16
+  1    23      1220110    20-MAY-16 1240231    20-MAY-16
+  1    24      1240231    20-MAY-16 1251503    20-MAY-16
+  1    25      1251503    20-MAY-16 1261778    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+76      14.97M     DISK        00:00:42     27-AUG-16      
+        BP Key: 76   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T112012
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\2KREA0VT_1_1
+
+  List of Archived Logs in backup set 76
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    35      1378231    11-JUN-16 1399093    20-JUN-16
+  1    36      1399093    20-JUN-16 1408192    15-AUG-16
+  1    37      1408192    15-AUG-16 1408879    15-AUG-16
+  1    38      1408879    15-AUG-16 1408934    15-AUG-16
+  1    39      1408934    15-AUG-16 1409973    15-AUG-16
+  1    40      1409973    15-AUG-16 1409990    15-AUG-16
+  1    41      1409990    15-AUG-16 1409993    15-AUG-16
+  1    42      1409993    15-AUG-16 1409997    15-AUG-16
+  1    43      1409997    15-AUG-16 1410000    15-AUG-16
+  1    44      1410000    15-AUG-16 1410003    15-AUG-16
+  1    45      1410003    15-AUG-16 1410006    15-AUG-16
+  1    46      1410006    15-AUG-16 1410009    15-AUG-16
+  1    47      1410009    15-AUG-16 1435443    16-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+77      86.67M     DISK        00:00:57     27-AUG-16      
+        BP Key: 77   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T112012
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\2JREA0VJ_1_1
+
+  List of Archived Logs in backup set 77
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    26      1261778    20-MAY-16 1268308    20-MAY-16
+  1    27      1268308    20-MAY-16 1278022    20-MAY-16
+  1    28      1278022    20-MAY-16 1299593    20-MAY-16
+  1    29      1299593    20-MAY-16 1310713    20-MAY-16
+  1    30      1310713    20-MAY-16 1314902    20-MAY-16
+  1    31      1314902    20-MAY-16 1317531    20-MAY-16
+  1    32      1317531    20-MAY-16 1320796    20-MAY-16
+  1    33      1320796    20-MAY-16 1340284    20-MAY-16
+  1    34      1340284    20-MAY-16 1378231    11-JUN-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+78      54.64M     DISK        00:00:28     27-AUG-16      
+        BP Key: 78   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T112012
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\2LREA10T_1_1
+
+  List of Archived Logs in backup set 78
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    48      1435443    16-AUG-16 1443895    16-AUG-16
+  1    49      1443895    16-AUG-16 1478565    25-AUG-16
+  1    50      1478565    25-AUG-16 1504366    25-AUG-16
+  1    51      1504366    25-AUG-16 1531209    26-AUG-16
+  1    52      1531209    26-AUG-16 1535185    26-AUG-16
+  1    53      1535185    26-AUG-16 1535236    26-AUG-16
+  1    54      1535236    26-AUG-16 1535439    26-AUG-16
+  1    55      1535439    26-AUG-16 1535492    26-AUG-16
+  1    56      1535492    26-AUG-16 1563076    27-AUG-16
+  1    57      1563076    27-AUG-16 1586918    27-AUG-16
+  1    58      1586918    27-AUG-16 1587598    27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+79      Full    1.20M      DISK        00:00:08     27-AUG-16      
+        BP Key: 79   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T112137
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\2OREA122_1_1
+  List of Datafiles in backup set 79
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  3       Full 1587641    27-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\UNDOTBS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+80      Full    1.02M      DISK        00:00:07     27-AUG-16      
+        BP Key: 80   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T112137
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\2PREA125_1_1
+  List of Datafiles in backup set 80
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  4       Full 1587643    27-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\USERS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+81      Full    73.05M     DISK        00:00:33     27-AUG-16      
+        BP Key: 81   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T112137
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\2NREA122_1_1
+  List of Datafiles in backup set 81
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  2       Full 1587640    27-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSAUX01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+82      Full    183.80M    DISK        00:00:57     27-AUG-16      
+        BP Key: 82   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T112137
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\2MREA122_1_1
+  List of Datafiles in backup set 82
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  1       Full 1587639    27-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSTEM01.DBF
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+83      6.00K      DISK        00:00:00     27-AUG-16      
+        BP Key: 83   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T112241
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\2QREA141_1_1
+
+  List of Archived Logs in backup set 83
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    59      1587598    27-AUG-16 1587667    27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+84      Full    9.39M      DISK        00:00:02     27-AUG-16      
+        BP Key: 84   Status: AVAILABLE  Compressed: NO  Tag: TAG20160827T112242
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_27\O1_MF_S_920978562_CW1TV3Z4_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1587676      Ckp time: 27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+85      Full    9.36M      DISK        00:00:04     27-AUG-16      
+        BP Key: 85   Status: AVAILABLE  Compressed: NO  Tag: TAG20160827T113844
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\C_ORCL20160827920979524
+  Control File Included: Ckp SCN: 1588115      Ckp time: 27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+86      Full    9.39M      DISK        00:00:02     27-AUG-16      
+        BP Key: 86   Status: AVAILABLE  Compressed: NO  Tag: TAG20160827T113848
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_27\O1_MF_S_920979528_CW1VS9Q2_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1588122      Ckp time: 27-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+87      90.82M     DISK        00:00:38     27-AUG-16      
+        BP Key: 87   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T113853
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\2UREA22F_1_1
+
+  List of Archived Logs in backup set 87
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    8       963611     28-MAR-16 978923     20-MAY-16
+  1    9       978923     20-MAY-16 980582     20-MAY-16
+  1    10      980582     20-MAY-16 990070     20-MAY-16
+  1    11      990070     20-MAY-16 1014745    20-MAY-16
+  1    12      1014745    20-MAY-16 1034494    20-MAY-16
+  1    13      1034494    20-MAY-16 1036226    20-MAY-16
+  1    14      1036226    20-MAY-16 1060722    20-MAY-16
+  1    15      1060722    20-MAY-16 1079257    20-MAY-16
+  1    16      1079257    20-MAY-16 1099400    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+88      106.26M    DISK        00:00:48     27-AUG-16      
+        BP Key: 88   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T113853
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\2VREA22F_1_1
+
+  List of Archived Logs in backup set 88
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    17      1099400    20-MAY-16 1114387    20-MAY-16
+  1    18      1114387    20-MAY-16 1128076    20-MAY-16
+  1    19      1128076    20-MAY-16 1143302    20-MAY-16
+  1    20      1143302    20-MAY-16 1163440    20-MAY-16
+  1    21      1163440    20-MAY-16 1195966    20-MAY-16
+  1    22      1195966    20-MAY-16 1220110    20-MAY-16
+  1    23      1220110    20-MAY-16 1240231    20-MAY-16
+  1    24      1240231    20-MAY-16 1251503    20-MAY-16
+  1    25      1251503    20-MAY-16 1261778    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+89      86.67M     DISK        00:00:52     27-AUG-16      
+        BP Key: 89   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T113853
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\30REA22J_1_1
+
+  List of Archived Logs in backup set 89
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    26      1261778    20-MAY-16 1268308    20-MAY-16
+  1    27      1268308    20-MAY-16 1278022    20-MAY-16
+  1    28      1278022    20-MAY-16 1299593    20-MAY-16
+  1    29      1299593    20-MAY-16 1310713    20-MAY-16
+  1    30      1310713    20-MAY-16 1314902    20-MAY-16
+  1    31      1314902    20-MAY-16 1317531    20-MAY-16
+  1    32      1317531    20-MAY-16 1320796    20-MAY-16
+  1    33      1320796    20-MAY-16 1340284    20-MAY-16
+  1    34      1340284    20-MAY-16 1378231    11-JUN-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+90      27.95M     DISK        00:00:35     27-AUG-16      
+        BP Key: 90   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T113853
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\31REA235_1_1
+
+  List of Archived Logs in backup set 90
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    35      1378231    11-JUN-16 1399093    20-JUN-16
+  1    36      1399093    20-JUN-16 1408192    15-AUG-16
+  1    37      1408192    15-AUG-16 1408879    15-AUG-16
+  1    38      1408879    15-AUG-16 1408934    15-AUG-16
+  1    39      1408934    15-AUG-16 1409973    15-AUG-16
+  1    40      1409973    15-AUG-16 1409990    15-AUG-16
+  1    41      1409990    15-AUG-16 1409993    15-AUG-16
+  1    42      1409993    15-AUG-16 1409997    15-AUG-16
+  1    43      1409997    15-AUG-16 1410000    15-AUG-16
+  1    44      1410000    15-AUG-16 1410003    15-AUG-16
+  1    45      1410003    15-AUG-16 1410006    15-AUG-16
+  1    46      1410006    15-AUG-16 1410009    15-AUG-16
+  1    47      1410009    15-AUG-16 1435443    16-AUG-16
+  1    48      1435443    16-AUG-16 1443895    16-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+91      41.71M     DISK        00:00:23     27-AUG-16      
+        BP Key: 91   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T113853
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\32REA23Q_1_1
+
+  List of Archived Logs in backup set 91
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    49      1443895    16-AUG-16 1478565    25-AUG-16
+  1    50      1478565    25-AUG-16 1504366    25-AUG-16
+  1    51      1504366    25-AUG-16 1531209    26-AUG-16
+  1    52      1531209    26-AUG-16 1535185    26-AUG-16
+  1    53      1535185    26-AUG-16 1535236    26-AUG-16
+  1    54      1535236    26-AUG-16 1535439    26-AUG-16
+  1    55      1535439    26-AUG-16 1535492    26-AUG-16
+  1    56      1535492    26-AUG-16 1563076    27-AUG-16
+  1    57      1563076    27-AUG-16 1586918    27-AUG-16
+  1    58      1586918    27-AUG-16 1587598    27-AUG-16
+  1    59      1587598    27-AUG-16 1587667    27-AUG-16
+  1    60      1587667    27-AUG-16 1588164    27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+92      Full    1.20M      DISK        00:00:09     27-AUG-16      
+        BP Key: 92   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T114006
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\35REA24N_1_1
+  List of Datafiles in backup set 92
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  3       Full 1588200    27-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\UNDOTBS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+93      Full    1.02M      DISK        00:00:08     27-AUG-16      
+        BP Key: 93   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T114006
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\36REA24R_1_1
+  List of Datafiles in backup set 93
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  4       Full 1588202    27-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\USERS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+94      Full    73.05M     DISK        00:00:27     27-AUG-16      
+        BP Key: 94   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T114006
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\34REA24N_1_1
+  List of Datafiles in backup set 94
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  2       Full 1588198    27-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSAUX01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+95      Full    183.80M    DISK        00:00:48     27-AUG-16      
+        BP Key: 95   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T114006
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\33REA24M_1_1
+  List of Datafiles in backup set 95
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  1       Full 1588196    27-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSTEM01.DBF
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+96      11.00K     DISK        00:00:00     27-AUG-16      
+        BP Key: 96   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T114059
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\37REA26B_1_1
+
+  List of Archived Logs in backup set 96
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    61      1588164    27-AUG-16 1588227    27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+97      Full    9.39M      DISK        00:00:03     27-AUG-16      
+        BP Key: 97   Status: AVAILABLE  Compressed: NO  Tag: TAG20160827T114100
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_27\O1_MF_S_920979660_CW1VXG2H_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1588236      Ckp time: 27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+98      Full    9.36M      DISK        00:00:02     27-AUG-16      
+        BP Key: 98   Status: AVAILABLE  Compressed: NO  Tag: TAG20160827T114208
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\C_ORCL20160827920979728
+  Control File Included: Ckp SCN: 1588310      Ckp time: 27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+99      Full    9.39M      DISK        00:00:02     27-AUG-16      
+        BP Key: 99   Status: AVAILABLE  Compressed: NO  Tag: TAG20160827T114210
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_27\O1_MF_S_920979730_CW1VZMNY_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1588316      Ckp time: 27-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+100     90.82M     DISK        00:00:42     27-AUG-16      
+        BP Key: 100   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T114215
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\3BREA28P_1_1
+
+  List of Archived Logs in backup set 100
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    8       963611     28-MAR-16 978923     20-MAY-16
+  1    9       978923     20-MAY-16 980582     20-MAY-16
+  1    10      980582     20-MAY-16 990070     20-MAY-16
+  1    11      990070     20-MAY-16 1014745    20-MAY-16
+  1    12      1014745    20-MAY-16 1034494    20-MAY-16
+  1    13      1034494    20-MAY-16 1036226    20-MAY-16
+  1    14      1036226    20-MAY-16 1060722    20-MAY-16
+  1    15      1060722    20-MAY-16 1079257    20-MAY-16
+  1    16      1079257    20-MAY-16 1099400    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+101     106.26M    DISK        00:00:48     27-AUG-16      
+        BP Key: 101   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T114215
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\3CREA28Q_1_1
+
+  List of Archived Logs in backup set 101
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    17      1099400    20-MAY-16 1114387    20-MAY-16
+  1    18      1114387    20-MAY-16 1128076    20-MAY-16
+  1    19      1128076    20-MAY-16 1143302    20-MAY-16
+  1    20      1143302    20-MAY-16 1163440    20-MAY-16
+  1    21      1163440    20-MAY-16 1195966    20-MAY-16
+  1    22      1195966    20-MAY-16 1220110    20-MAY-16
+  1    23      1220110    20-MAY-16 1240231    20-MAY-16
+  1    24      1240231    20-MAY-16 1251503    20-MAY-16
+  1    25      1251503    20-MAY-16 1261778    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+102     86.67M     DISK        00:00:54     27-AUG-16      
+        BP Key: 102   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T114215
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\3DREA28S_1_1
+
+  List of Archived Logs in backup set 102
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    26      1261778    20-MAY-16 1268308    20-MAY-16
+  1    27      1268308    20-MAY-16 1278022    20-MAY-16
+  1    28      1278022    20-MAY-16 1299593    20-MAY-16
+  1    29      1299593    20-MAY-16 1310713    20-MAY-16
+  1    30      1310713    20-MAY-16 1314902    20-MAY-16
+  1    31      1314902    20-MAY-16 1317531    20-MAY-16
+  1    32      1317531    20-MAY-16 1320796    20-MAY-16
+  1    33      1320796    20-MAY-16 1340284    20-MAY-16
+  1    34      1340284    20-MAY-16 1378231    11-JUN-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+103     27.95M     DISK        00:00:42     27-AUG-16      
+        BP Key: 103   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T114215
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\3EREA298_1_1
+
+  List of Archived Logs in backup set 103
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    35      1378231    11-JUN-16 1399093    20-JUN-16
+  1    36      1399093    20-JUN-16 1408192    15-AUG-16
+  1    37      1408192    15-AUG-16 1408879    15-AUG-16
+  1    38      1408879    15-AUG-16 1408934    15-AUG-16
+  1    39      1408934    15-AUG-16 1409973    15-AUG-16
+  1    40      1409973    15-AUG-16 1409990    15-AUG-16
+  1    41      1409990    15-AUG-16 1409993    15-AUG-16
+  1    42      1409993    15-AUG-16 1409997    15-AUG-16
+  1    43      1409997    15-AUG-16 1410000    15-AUG-16
+  1    44      1410000    15-AUG-16 1410003    15-AUG-16
+  1    45      1410003    15-AUG-16 1410006    15-AUG-16
+  1    46      1410006    15-AUG-16 1410009    15-AUG-16
+  1    47      1410009    15-AUG-16 1435443    16-AUG-16
+  1    48      1435443    16-AUG-16 1443895    16-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+104     41.72M     DISK        00:00:22     27-AUG-16      
+        BP Key: 104   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T114215
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\3FREA2A5_1_1
+
+  List of Archived Logs in backup set 104
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    49      1443895    16-AUG-16 1478565    25-AUG-16
+  1    50      1478565    25-AUG-16 1504366    25-AUG-16
+  1    51      1504366    25-AUG-16 1531209    26-AUG-16
+  1    52      1531209    26-AUG-16 1535185    26-AUG-16
+  1    53      1535185    26-AUG-16 1535236    26-AUG-16
+  1    54      1535236    26-AUG-16 1535439    26-AUG-16
+  1    55      1535439    26-AUG-16 1535492    26-AUG-16
+  1    56      1535492    26-AUG-16 1563076    27-AUG-16
+  1    57      1563076    27-AUG-16 1586918    27-AUG-16
+  1    58      1586918    27-AUG-16 1587598    27-AUG-16
+  1    59      1587598    27-AUG-16 1587667    27-AUG-16
+  1    60      1587667    27-AUG-16 1588164    27-AUG-16
+  1    61      1588164    27-AUG-16 1588227    27-AUG-16
+  1    62      1588227    27-AUG-16 1588358    27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+105     Full    1.20M      DISK        00:00:10     27-AUG-16      
+        BP Key: 105   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T114329
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\3IREA2B3_1_1
+  List of Datafiles in backup set 105
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  3       Full 1588393    27-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\UNDOTBS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+106     Full    1.02M      DISK        00:00:11     27-AUG-16      
+        BP Key: 106   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T114329
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\3JREA2B5_1_1
+  List of Datafiles in backup set 106
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  4       Full 1588397    27-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\USERS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+107     Full    73.05M     DISK        00:00:29     27-AUG-16      
+        BP Key: 107   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T114329
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\3HREA2B2_1_1
+  List of Datafiles in backup set 107
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  2       Full 1588391    27-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSAUX01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+108     Full    183.80M    DISK        00:00:47     27-AUG-16      
+        BP Key: 108   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T114329
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\3GREA2B2_1_1
+  List of Datafiles in backup set 108
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  1       Full 1588390    27-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSTEM01.DBF
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+109     3.50K      DISK        00:00:00     27-AUG-16      
+        BP Key: 109   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T114426
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\3KREA2CQ_1_1
+
+  List of Archived Logs in backup set 109
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    63      1588358    27-AUG-16 1588416    27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+110     Full    9.64M      DISK        00:00:02     27-AUG-16      
+        BP Key: 110   Status: AVAILABLE  Compressed: NO  Tag: TAG20160827T114428
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_27\O1_MF_S_920979868_CW1W3XC2_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1588425      Ckp time: 27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+111     Full    9.61M      DISK        00:00:02     27-AUG-16      
+        BP Key: 111   Status: AVAILABLE  Compressed: NO  Tag: TAG20160827T115330
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\C_ORCL20160827920980410
+  Control File Included: Ckp SCN: 1588693      Ckp time: 27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+112     Full    9.64M      DISK        00:00:02     27-AUG-16      
+        BP Key: 112   Status: AVAILABLE  Compressed: NO  Tag: TAG20160827T115332
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_27\O1_MF_S_920980412_CW1WNXTF_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1588700      Ckp time: 27-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+113     92.39M     DISK        00:00:44     27-AUG-16      
+        BP Key: 113   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T115337
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\3OREA2U3_1_1
+
+  List of Archived Logs in backup set 113
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    9       978923     20-MAY-16 980582     20-MAY-16
+  1    10      980582     20-MAY-16 990070     20-MAY-16
+  1    11      990070     20-MAY-16 1014745    20-MAY-16
+  1    12      1014745    20-MAY-16 1034494    20-MAY-16
+  1    13      1034494    20-MAY-16 1036226    20-MAY-16
+  1    14      1036226    20-MAY-16 1060722    20-MAY-16
+  1    15      1060722    20-MAY-16 1079257    20-MAY-16
+  1    16      1079257    20-MAY-16 1099400    20-MAY-16
+  1    17      1099400    20-MAY-16 1114387    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+114     94.98M     DISK        00:00:44     27-AUG-16      
+        BP Key: 114   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T115337
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\3PREA2U4_1_1
+
+  List of Archived Logs in backup set 114
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    18      1114387    20-MAY-16 1128076    20-MAY-16
+  1    19      1128076    20-MAY-16 1143302    20-MAY-16
+  1    20      1143302    20-MAY-16 1163440    20-MAY-16
+  1    21      1163440    20-MAY-16 1195966    20-MAY-16
+  1    22      1195966    20-MAY-16 1220110    20-MAY-16
+  1    23      1220110    20-MAY-16 1240231    20-MAY-16
+  1    24      1240231    20-MAY-16 1251503    20-MAY-16
+  1    25      1251503    20-MAY-16 1261778    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+115     81.74M     DISK        00:00:46     27-AUG-16      
+        BP Key: 115   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T115337
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\3QREA2U7_1_1
+
+  List of Archived Logs in backup set 115
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    26      1261778    20-MAY-16 1268308    20-MAY-16
+  1    27      1268308    20-MAY-16 1278022    20-MAY-16
+  1    28      1278022    20-MAY-16 1299593    20-MAY-16
+  1    29      1299593    20-MAY-16 1310713    20-MAY-16
+  1    30      1310713    20-MAY-16 1314902    20-MAY-16
+  1    31      1314902    20-MAY-16 1317531    20-MAY-16
+  1    32      1317531    20-MAY-16 1320796    20-MAY-16
+  1    33      1320796    20-MAY-16 1340284    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+116     20.01M     DISK        00:00:38     27-AUG-16      
+        BP Key: 116   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T115337
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\3RREA2UJ_1_1
+
+  List of Archived Logs in backup set 116
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    34      1340284    20-MAY-16 1378231    11-JUN-16
+  1    35      1378231    11-JUN-16 1399093    20-JUN-16
+  1    36      1399093    20-JUN-16 1408192    15-AUG-16
+  1    37      1408192    15-AUG-16 1408879    15-AUG-16
+  1    38      1408879    15-AUG-16 1408934    15-AUG-16
+  1    39      1408934    15-AUG-16 1409973    15-AUG-16
+  1    40      1409973    15-AUG-16 1409990    15-AUG-16
+  1    41      1409990    15-AUG-16 1409993    15-AUG-16
+  1    42      1409993    15-AUG-16 1409997    15-AUG-16
+  1    43      1409997    15-AUG-16 1410000    15-AUG-16
+  1    44      1410000    15-AUG-16 1410003    15-AUG-16
+  1    45      1410003    15-AUG-16 1410006    15-AUG-16
+  1    46      1410006    15-AUG-16 1410009    15-AUG-16
+  1    47      1410009    15-AUG-16 1435443    16-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+117     23.00K     DISK        00:00:03     27-AUG-16      
+        BP Key: 117   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T115337
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\3TREA2VN_1_1
+
+  List of Archived Logs in backup set 117
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    62      1588227    27-AUG-16 1588358    27-AUG-16
+  1    63      1588358    27-AUG-16 1588416    27-AUG-16
+  1    64      1588416    27-AUG-16 1588741    27-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+118     54.63M     DISK        00:00:20     27-AUG-16      
+        BP Key: 118   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T115337
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\3SREA2VG_1_1
+
+  List of Archived Logs in backup set 118
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    48      1435443    16-AUG-16 1443895    16-AUG-16
+  1    49      1443895    16-AUG-16 1478565    25-AUG-16
+  1    50      1478565    25-AUG-16 1504366    25-AUG-16
+  1    51      1504366    25-AUG-16 1531209    26-AUG-16
+  1    52      1531209    26-AUG-16 1535185    26-AUG-16
+  1    53      1535185    26-AUG-16 1535236    26-AUG-16
+  1    54      1535236    26-AUG-16 1535439    26-AUG-16
+  1    55      1535439    26-AUG-16 1535492    26-AUG-16
+  1    56      1535492    26-AUG-16 1563076    27-AUG-16
+  1    57      1563076    27-AUG-16 1586918    27-AUG-16
+  1    58      1586918    27-AUG-16 1587598    27-AUG-16
+  1    59      1587598    27-AUG-16 1587667    27-AUG-16
+  1    60      1587667    27-AUG-16 1588164    27-AUG-16
+  1    61      1588164    27-AUG-16 1588227    27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+119     Full    1.20M      DISK        00:00:11     27-AUG-16      
+        BP Key: 119   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T115448
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\40REA30A_1_1
+  List of Datafiles in backup set 119
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  3       Full 1588775    27-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\UNDOTBS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+120     Full    1.02M      DISK        00:00:14     27-AUG-16      
+        BP Key: 120   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T115448
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\41REA30C_1_1
+  List of Datafiles in backup set 120
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  4       Full 1588779    27-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\USERS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+121     Full    73.05M     DISK        00:00:32     27-AUG-16      
+        BP Key: 121   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T115448
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\3VREA309_1_1
+  List of Datafiles in backup set 121
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  2       Full 1588774    27-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSAUX01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+122     Full    183.80M    DISK        00:00:49     27-AUG-16      
+        BP Key: 122   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T115448
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\3UREA309_1_1
+  List of Datafiles in backup set 122
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  1       Full 1588772    27-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSTEM01.DBF
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+123     4.00K      DISK        00:00:00     27-AUG-16      
+        BP Key: 123   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T115547
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\42REA323_1_1
+
+  List of Archived Logs in backup set 123
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    65      1588741    27-AUG-16 1588799    27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+124     Full    9.64M      DISK        00:00:02     27-AUG-16      
+        BP Key: 124   Status: AVAILABLE  Compressed: NO  Tag: TAG20160827T115548
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_27\O1_MF_S_920980548_CW1WS5TB_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1588808      Ckp time: 27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+125     Full    9.61M      DISK        00:00:02     27-AUG-16      
+        BP Key: 125   Status: AVAILABLE  Compressed: NO  Tag: TAG20160827T120233
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\C_ORCL20160827920980953
+  Control File Included: Ckp SCN: 1589151      Ckp time: 27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+126     Full    9.64M      DISK        00:00:01     27-AUG-16      
+        BP Key: 126   Status: AVAILABLE  Compressed: NO  Tag: TAG20160827T120236
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_27\O1_MF_S_920980956_CW1X5X8G_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1589158      Ckp time: 27-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+127     89.23M     DISK        00:00:39     27-AUG-16      
+        BP Key: 127   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T120241
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\46REA3F3_1_1
+
+  List of Archived Logs in backup set 127
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    11      990070     20-MAY-16 1014745    20-MAY-16
+  1    12      1014745    20-MAY-16 1034494    20-MAY-16
+  1    13      1034494    20-MAY-16 1036226    20-MAY-16
+  1    14      1036226    20-MAY-16 1060722    20-MAY-16
+  1    15      1060722    20-MAY-16 1079257    20-MAY-16
+  1    16      1079257    20-MAY-16 1099400    20-MAY-16
+  1    17      1099400    20-MAY-16 1114387    20-MAY-16
+  1    18      1114387    20-MAY-16 1128076    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+128     93.25M     DISK        00:00:45     27-AUG-16      
+        BP Key: 128   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T120241
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\47REA3F3_1_1
+
+  List of Archived Logs in backup set 128
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    19      1128076    20-MAY-16 1143302    20-MAY-16
+  1    20      1143302    20-MAY-16 1163440    20-MAY-16
+  1    21      1163440    20-MAY-16 1195966    20-MAY-16
+  1    22      1195966    20-MAY-16 1220110    20-MAY-16
+  1    23      1220110    20-MAY-16 1240231    20-MAY-16
+  1    24      1240231    20-MAY-16 1251503    20-MAY-16
+  1    25      1251503    20-MAY-16 1261778    20-MAY-16
+  1    26      1261778    20-MAY-16 1268308    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+129     75.16M     DISK        00:00:46     27-AUG-16      
+        BP Key: 129   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T120241
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\48REA3F6_1_1
+
+  List of Archived Logs in backup set 129
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    27      1268308    20-MAY-16 1278022    20-MAY-16
+  1    28      1278022    20-MAY-16 1299593    20-MAY-16
+  1    29      1299593    20-MAY-16 1310713    20-MAY-16
+  1    30      1310713    20-MAY-16 1314902    20-MAY-16
+  1    31      1314902    20-MAY-16 1317531    20-MAY-16
+  1    32      1317531    20-MAY-16 1320796    20-MAY-16
+  1    33      1320796    20-MAY-16 1340284    20-MAY-16
+  1    34      1340284    20-MAY-16 1378231    11-JUN-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+130     27.95M     DISK        00:00:39     27-AUG-16      
+        BP Key: 130   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T120241
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\49REA3FE_1_1
+
+  List of Archived Logs in backup set 130
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    35      1378231    11-JUN-16 1399093    20-JUN-16
+  1    36      1399093    20-JUN-16 1408192    15-AUG-16
+  1    37      1408192    15-AUG-16 1408879    15-AUG-16
+  1    38      1408879    15-AUG-16 1408934    15-AUG-16
+  1    39      1408934    15-AUG-16 1409973    15-AUG-16
+  1    40      1409973    15-AUG-16 1409990    15-AUG-16
+  1    41      1409990    15-AUG-16 1409993    15-AUG-16
+  1    42      1409993    15-AUG-16 1409997    15-AUG-16
+  1    43      1409997    15-AUG-16 1410000    15-AUG-16
+  1    44      1410000    15-AUG-16 1410003    15-AUG-16
+  1    45      1410003    15-AUG-16 1410006    15-AUG-16
+  1    46      1410006    15-AUG-16 1410009    15-AUG-16
+  1    47      1410009    15-AUG-16 1435443    16-AUG-16
+  1    48      1435443    16-AUG-16 1443895    16-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+131     1.10M      DISK        00:00:03     27-AUG-16      
+        BP Key: 131   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T120241
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\4BREA3GL_1_1
+
+  List of Archived Logs in backup set 131
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    63      1588358    27-AUG-16 1588416    27-AUG-16
+  1    64      1588416    27-AUG-16 1588741    27-AUG-16
+  1    65      1588741    27-AUG-16 1588799    27-AUG-16
+  1    66      1588799    27-AUG-16 1589199    27-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+132     41.72M     DISK        00:00:19     27-AUG-16      
+        BP Key: 132   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T120241
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\4AREA3GD_1_1
+
+  List of Archived Logs in backup set 132
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    49      1443895    16-AUG-16 1478565    25-AUG-16
+  1    50      1478565    25-AUG-16 1504366    25-AUG-16
+  1    51      1504366    25-AUG-16 1531209    26-AUG-16
+  1    52      1531209    26-AUG-16 1535185    26-AUG-16
+  1    53      1535185    26-AUG-16 1535236    26-AUG-16
+  1    54      1535236    26-AUG-16 1535439    26-AUG-16
+  1    55      1535439    26-AUG-16 1535492    26-AUG-16
+  1    56      1535492    26-AUG-16 1563076    27-AUG-16
+  1    57      1563076    27-AUG-16 1586918    27-AUG-16
+  1    58      1586918    27-AUG-16 1587598    27-AUG-16
+  1    59      1587598    27-AUG-16 1587667    27-AUG-16
+  1    60      1587667    27-AUG-16 1588164    27-AUG-16
+  1    61      1588164    27-AUG-16 1588227    27-AUG-16
+  1    62      1588227    27-AUG-16 1588358    27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+133     Full    1.17M      DISK        00:00:11     27-AUG-16      
+        BP Key: 133   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T120350
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\4EREA3H7_1_1
+  List of Datafiles in backup set 133
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  3       Full 1589233    27-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\UNDOTBS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+134     Full    1.02M      DISK        00:00:10     27-AUG-16      
+        BP Key: 134   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T120350
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\4FREA3H9_1_1
+  List of Datafiles in backup set 134
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  4       Full 1589235    27-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\USERS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+135     Full    73.16M     DISK        00:00:30     27-AUG-16      
+        BP Key: 135   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T120350
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\4DREA3H6_1_1
+  List of Datafiles in backup set 135
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  2       Full 1589231    27-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSAUX01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+136     Full    183.80M    DISK        00:00:53     27-AUG-16      
+        BP Key: 136   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T120350
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\4CREA3H6_1_1
+  List of Datafiles in backup set 136
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  1       Full 1589230    27-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSTEM01.DBF
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+137     12.00K     DISK        00:00:00     27-AUG-16      
+        BP Key: 137   Status: AVAILABLE  Compressed: YES  Tag: TAG20160827T120453
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\4GREA3J5_1_1
+
+  List of Archived Logs in backup set 137
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    67      1589199    27-AUG-16 1589258    27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+138     Full    9.64M      DISK        00:00:02     27-AUG-16      
+        BP Key: 138   Status: AVAILABLE  Compressed: NO  Tag: TAG20160827T120454
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_27\O1_MF_S_920981094_CW1XB83D_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1589267      Ckp time: 27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+139     Full    9.61M      DISK        00:00:02     28-AUG-16      
+        BP Key: 139   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T105149
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\C_ORCL20160828921063109
+  Control File Included: Ckp SCN: 1644391      Ckp time: 28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+140     Full    9.64M      DISK        00:00:01     28-AUG-16      
+        BP Key: 140   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T105152
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_28\O1_MF_S_921063112_CW4FF93J_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1644398      Ckp time: 28-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+141     94.47M     DISK        00:00:31     28-AUG-16      
+        BP Key: 141   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T105158
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\4KRECJMH_1_1
+
+  List of Archived Logs in backup set 141
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    15      1060722    20-MAY-16 1079257    20-MAY-16
+  1    16      1079257    20-MAY-16 1099400    20-MAY-16
+  1    17      1099400    20-MAY-16 1114387    20-MAY-16
+  1    18      1114387    20-MAY-16 1128076    20-MAY-16
+  1    19      1128076    20-MAY-16 1143302    20-MAY-16
+  1    20      1143302    20-MAY-16 1163440    20-MAY-16
+  1    21      1163440    20-MAY-16 1195966    20-MAY-16
+  1    22      1195966    20-MAY-16 1220110    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+142     82.37M     DISK        00:00:32     28-AUG-16      
+        BP Key: 142   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T105158
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\4LRECJMI_1_1
+
+  List of Archived Logs in backup set 142
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    23      1220110    20-MAY-16 1240231    20-MAY-16
+  1    24      1240231    20-MAY-16 1251503    20-MAY-16
+  1    25      1251503    20-MAY-16 1261778    20-MAY-16
+  1    26      1261778    20-MAY-16 1268308    20-MAY-16
+  1    27      1268308    20-MAY-16 1278022    20-MAY-16
+  1    28      1278022    20-MAY-16 1299593    20-MAY-16
+  1    29      1299593    20-MAY-16 1310713    20-MAY-16
+  1    30      1310713    20-MAY-16 1314902    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+143     46.26M     DISK        00:00:39     28-AUG-16      
+        BP Key: 143   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T105158
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\4MRECJML_1_1
+
+  List of Archived Logs in backup set 143
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    31      1314902    20-MAY-16 1317531    20-MAY-16
+  1    32      1317531    20-MAY-16 1320796    20-MAY-16
+  1    33      1320796    20-MAY-16 1340284    20-MAY-16
+  1    34      1340284    20-MAY-16 1378231    11-JUN-16
+  1    35      1378231    11-JUN-16 1399093    20-JUN-16
+  1    36      1399093    20-JUN-16 1408192    15-AUG-16
+  1    37      1408192    15-AUG-16 1408879    15-AUG-16
+  1    38      1408879    15-AUG-16 1408934    15-AUG-16
+  1    39      1408934    15-AUG-16 1409973    15-AUG-16
+  1    40      1409973    15-AUG-16 1409990    15-AUG-16
+  1    41      1409990    15-AUG-16 1409993    15-AUG-16
+  1    42      1409993    15-AUG-16 1409997    15-AUG-16
+  1    43      1409997    15-AUG-16 1410000    15-AUG-16
+  1    44      1410000    15-AUG-16 1410003    15-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+144     27.50M     DISK        00:00:20     28-AUG-16      
+        BP Key: 144   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T105158
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\4ORECJNL_1_1
+
+  List of Archived Logs in backup set 144
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    59      1587598    27-AUG-16 1587667    27-AUG-16
+  1    60      1587667    27-AUG-16 1588164    27-AUG-16
+  1    61      1588164    27-AUG-16 1588227    27-AUG-16
+  1    62      1588227    27-AUG-16 1588358    27-AUG-16
+  1    63      1588358    27-AUG-16 1588416    27-AUG-16
+  1    64      1588416    27-AUG-16 1588741    27-AUG-16
+  1    65      1588741    27-AUG-16 1588799    27-AUG-16
+  1    66      1588799    27-AUG-16 1589199    27-AUG-16
+  1    67      1589199    27-AUG-16 1589258    27-AUG-16
+  1    68      1589258    27-AUG-16 1609321    27-AUG-16
+  1    69      1609321    27-AUG-16 1633729    28-AUG-16
+  1    70      1633729    28-AUG-16 1644440    28-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+145     64.71M     DISK        00:00:30     28-AUG-16      
+        BP Key: 145   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T105158
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\4NRECJNC_1_1
+
+  List of Archived Logs in backup set 145
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    45      1410003    15-AUG-16 1410006    15-AUG-16
+  1    46      1410006    15-AUG-16 1410009    15-AUG-16
+  1    47      1410009    15-AUG-16 1435443    16-AUG-16
+  1    48      1435443    16-AUG-16 1443895    16-AUG-16
+  1    49      1443895    16-AUG-16 1478565    25-AUG-16
+  1    50      1478565    25-AUG-16 1504366    25-AUG-16
+  1    51      1504366    25-AUG-16 1531209    26-AUG-16
+  1    52      1531209    26-AUG-16 1535185    26-AUG-16
+  1    53      1535185    26-AUG-16 1535236    26-AUG-16
+  1    54      1535236    26-AUG-16 1535439    26-AUG-16
+  1    55      1535439    26-AUG-16 1535492    26-AUG-16
+  1    56      1535492    26-AUG-16 1563076    27-AUG-16
+  1    57      1563076    27-AUG-16 1586918    27-AUG-16
+  1    58      1586918    27-AUG-16 1587598    27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+146     Full    2.17M      DISK        00:00:11     28-AUG-16      
+        BP Key: 146   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T105300
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\4RRECJOE_1_1
+  List of Datafiles in backup set 146
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  3       Full 1644471    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\UNDOTBS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+147     Full    1.02M      DISK        00:00:14     28-AUG-16      
+        BP Key: 147   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T105300
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\4SRECJOG_1_1
+  List of Datafiles in backup set 147
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  4       Full 1644475    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\USERS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+148     Full    75.57M     DISK        00:00:33     28-AUG-16      
+        BP Key: 148   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T105300
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\4QRECJOD_1_1
+  List of Datafiles in backup set 148
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  2       Full 1644469    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSAUX01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+149     Full    183.96M    DISK        00:00:50     28-AUG-16      
+        BP Key: 149   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T105300
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\4PRECJOD_1_1
+  List of Datafiles in backup set 149
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  1       Full 1644468    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSTEM01.DBF
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+150     3.50K      DISK        00:00:00     28-AUG-16      
+        BP Key: 150   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T105358
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\4TRECJQ6_1_1
+
+  List of Archived Logs in backup set 150
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    71      1644440    28-AUG-16 1644501    28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+151     Full    9.64M      DISK        00:00:02     28-AUG-16      
+        BP Key: 151   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T105359
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_28\O1_MF_S_921063239_CW4FK90M_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1644510      Ckp time: 28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+152     Full    9.61M      DISK        00:00:02     28-AUG-16      
+        BP Key: 152   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T110502
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\C_ORCL20160828921063902
+  Control File Included: Ckp SCN: 1644937      Ckp time: 28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+153     Full    9.64M      DISK        00:00:02     28-AUG-16      
+        BP Key: 153   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T110504
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_28\O1_MF_S_921063904_CW4G61Z0_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1644944      Ckp time: 28-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+154     81.64M     DISK        00:00:25     28-AUG-16      
+        BP Key: 154   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T110509
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\51RECKF8_1_1
+
+  List of Archived Logs in backup set 154
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    17      1099400    20-MAY-16 1114387    20-MAY-16
+  1    18      1114387    20-MAY-16 1128076    20-MAY-16
+  1    19      1128076    20-MAY-16 1143302    20-MAY-16
+  1    20      1143302    20-MAY-16 1163440    20-MAY-16
+  1    21      1163440    20-MAY-16 1195966    20-MAY-16
+  1    22      1195966    20-MAY-16 1220110    20-MAY-16
+  1    23      1220110    20-MAY-16 1240231    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+155     70.76M     DISK        00:00:27     28-AUG-16      
+        BP Key: 155   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T110509
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\52RECKF8_1_1
+
+  List of Archived Logs in backup set 155
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    24      1240231    20-MAY-16 1251503    20-MAY-16
+  1    25      1251503    20-MAY-16 1261778    20-MAY-16
+  1    26      1261778    20-MAY-16 1268308    20-MAY-16
+  1    27      1268308    20-MAY-16 1278022    20-MAY-16
+  1    28      1278022    20-MAY-16 1299593    20-MAY-16
+  1    29      1299593    20-MAY-16 1310713    20-MAY-16
+  1    30      1310713    20-MAY-16 1314902    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+156     46.26M     DISK        00:00:37     28-AUG-16      
+        BP Key: 156   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T110509
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\53RECKFC_1_1
+
+  List of Archived Logs in backup set 156
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    31      1314902    20-MAY-16 1317531    20-MAY-16
+  1    32      1317531    20-MAY-16 1320796    20-MAY-16
+  1    33      1320796    20-MAY-16 1340284    20-MAY-16
+  1    34      1340284    20-MAY-16 1378231    11-JUN-16
+  1    35      1378231    11-JUN-16 1399093    20-JUN-16
+  1    36      1399093    20-JUN-16 1408192    15-AUG-16
+  1    37      1408192    15-AUG-16 1408879    15-AUG-16
+  1    38      1408879    15-AUG-16 1408934    15-AUG-16
+  1    39      1408934    15-AUG-16 1409973    15-AUG-16
+  1    40      1409973    15-AUG-16 1409990    15-AUG-16
+  1    41      1409990    15-AUG-16 1409993    15-AUG-16
+  1    42      1409993    15-AUG-16 1409997    15-AUG-16
+  1    43      1409997    15-AUG-16 1410000    15-AUG-16
+  1    44      1410000    15-AUG-16 1410003    15-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+157     64.71M     DISK        00:00:28     28-AUG-16      
+        BP Key: 157   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T110509
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\54RECKG2_1_1
+
+  List of Archived Logs in backup set 157
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    45      1410003    15-AUG-16 1410006    15-AUG-16
+  1    46      1410006    15-AUG-16 1410009    15-AUG-16
+  1    47      1410009    15-AUG-16 1435443    16-AUG-16
+  1    48      1435443    16-AUG-16 1443895    16-AUG-16
+  1    49      1443895    16-AUG-16 1478565    25-AUG-16
+  1    50      1478565    25-AUG-16 1504366    25-AUG-16
+  1    51      1504366    25-AUG-16 1531209    26-AUG-16
+  1    52      1531209    26-AUG-16 1535185    26-AUG-16
+  1    53      1535185    26-AUG-16 1535236    26-AUG-16
+  1    54      1535236    26-AUG-16 1535439    26-AUG-16
+  1    55      1535439    26-AUG-16 1535492    26-AUG-16
+  1    56      1535492    26-AUG-16 1563076    27-AUG-16
+  1    57      1563076    27-AUG-16 1586918    27-AUG-16
+  1    58      1586918    27-AUG-16 1587598    27-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+158     27.76M     DISK        00:00:26     28-AUG-16      
+        BP Key: 158   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T110509
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\55RECKG7_1_1
+
+  List of Archived Logs in backup set 158
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    59      1587598    27-AUG-16 1587667    27-AUG-16
+  1    60      1587667    27-AUG-16 1588164    27-AUG-16
+  1    61      1588164    27-AUG-16 1588227    27-AUG-16
+  1    62      1588227    27-AUG-16 1588358    27-AUG-16
+  1    63      1588358    27-AUG-16 1588416    27-AUG-16
+  1    64      1588416    27-AUG-16 1588741    27-AUG-16
+  1    65      1588741    27-AUG-16 1588799    27-AUG-16
+  1    66      1588799    27-AUG-16 1589199    27-AUG-16
+  1    67      1589199    27-AUG-16 1589258    27-AUG-16
+  1    68      1589258    27-AUG-16 1609321    27-AUG-16
+  1    69      1609321    27-AUG-16 1633729    28-AUG-16
+  1    70      1633729    28-AUG-16 1644440    28-AUG-16
+  1    71      1644440    28-AUG-16 1644501    28-AUG-16
+  1    72      1644501    28-AUG-16 1644986    28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+159     Full    1.17M      DISK        00:00:10     28-AUG-16      
+        BP Key: 159   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T110612
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\58RECKH5_1_1
+  List of Datafiles in backup set 159
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  3       Full 1645152    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\UNDOTBS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+160     Full    1.02M      DISK        00:00:11     28-AUG-16      
+        BP Key: 160   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T110612
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\59RECKH8_1_1
+  List of Datafiles in backup set 160
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  4       Full 1645155    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\USERS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+161     Full    75.63M     DISK        00:00:29     28-AUG-16      
+        BP Key: 161   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T110612
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\57RECKH5_1_1
+  List of Datafiles in backup set 161
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  2       Full 1645150    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSAUX01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+162     Full    183.96M    DISK        00:00:45     28-AUG-16      
+        BP Key: 162   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T110612
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\56RECKH4_1_1
+  List of Datafiles in backup set 162
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  1       Full 1645149    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSTEM01.DBF
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+163     146.00K    DISK        00:00:00     28-AUG-16      
+        BP Key: 163   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T110706
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\5ARECKIQ_1_1
+
+  List of Archived Logs in backup set 163
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    73      1644986    28-AUG-16 1645174    28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+164     Full    9.64M      DISK        00:00:02     28-AUG-16      
+        BP Key: 164   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T110707
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_28\O1_MF_S_921064027_CW4G9WJM_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1645183      Ckp time: 28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+165     Full    9.61M      DISK        00:00:02     28-AUG-16      
+        BP Key: 165   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T111202
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\C_ORCL20160828921064322
+  Control File Included: Ckp SCN: 1645341      Ckp time: 28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+166     Full    9.64M      DISK        00:00:01     28-AUG-16      
+        BP Key: 166   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T111205
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_28\O1_MF_S_921064325_CW4GM63G_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1645348      Ckp time: 28-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+167     81.27M     DISK        00:00:25     28-AUG-16      
+        BP Key: 167   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T111210
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\5ERECKSC_1_1
+
+  List of Archived Logs in backup set 167
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    19      1128076    20-MAY-16 1143302    20-MAY-16
+  1    20      1143302    20-MAY-16 1163440    20-MAY-16
+  1    21      1163440    20-MAY-16 1195966    20-MAY-16
+  1    22      1195966    20-MAY-16 1220110    20-MAY-16
+  1    23      1220110    20-MAY-16 1240231    20-MAY-16
+  1    24      1240231    20-MAY-16 1251503    20-MAY-16
+  1    25      1251503    20-MAY-16 1261778    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+168     70.22M     DISK        00:00:25     28-AUG-16      
+        BP Key: 168   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T111210
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\5FRECKSC_1_1
+
+  List of Archived Logs in backup set 168
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    26      1261778    20-MAY-16 1268308    20-MAY-16
+  1    27      1268308    20-MAY-16 1278022    20-MAY-16
+  1    28      1278022    20-MAY-16 1299593    20-MAY-16
+  1    29      1299593    20-MAY-16 1310713    20-MAY-16
+  1    30      1310713    20-MAY-16 1314902    20-MAY-16
+  1    31      1314902    20-MAY-16 1317531    20-MAY-16
+  1    32      1317531    20-MAY-16 1320796    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+169     21.61M     DISK        00:00:30     28-AUG-16      
+        BP Key: 169   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T111210
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\5GRECKSE_1_1
+
+  List of Archived Logs in backup set 169
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    33      1320796    20-MAY-16 1340284    20-MAY-16
+  1    34      1340284    20-MAY-16 1378231    11-JUN-16
+  1    35      1378231    11-JUN-16 1399093    20-JUN-16
+  1    36      1399093    20-JUN-16 1408192    15-AUG-16
+  1    37      1408192    15-AUG-16 1408879    15-AUG-16
+  1    38      1408879    15-AUG-16 1408934    15-AUG-16
+  1    39      1408934    15-AUG-16 1409973    15-AUG-16
+  1    40      1409973    15-AUG-16 1409990    15-AUG-16
+  1    41      1409990    15-AUG-16 1409993    15-AUG-16
+  1    42      1409993    15-AUG-16 1409997    15-AUG-16
+  1    43      1409997    15-AUG-16 1410000    15-AUG-16
+  1    44      1410000    15-AUG-16 1410003    15-AUG-16
+  1    45      1410003    15-AUG-16 1410006    15-AUG-16
+  1    46      1410006    15-AUG-16 1410009    15-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+170     27.77M     DISK        00:00:18     28-AUG-16      
+        BP Key: 170   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T111210
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\5IRECKT8_1_1
+
+  List of Archived Logs in backup set 170
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    61      1588164    27-AUG-16 1588227    27-AUG-16
+  1    62      1588227    27-AUG-16 1588358    27-AUG-16
+  1    63      1588358    27-AUG-16 1588416    27-AUG-16
+  1    64      1588416    27-AUG-16 1588741    27-AUG-16
+  1    65      1588741    27-AUG-16 1588799    27-AUG-16
+  1    66      1588799    27-AUG-16 1589199    27-AUG-16
+  1    67      1589199    27-AUG-16 1589258    27-AUG-16
+  1    68      1589258    27-AUG-16 1609321    27-AUG-16
+  1    69      1609321    27-AUG-16 1633729    28-AUG-16
+  1    70      1633729    28-AUG-16 1644440    28-AUG-16
+  1    71      1644440    28-AUG-16 1644501    28-AUG-16
+  1    72      1644501    28-AUG-16 1644986    28-AUG-16
+  1    73      1644986    28-AUG-16 1645174    28-AUG-16
+  1    74      1645174    28-AUG-16 1645389    28-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+171     64.67M     DISK        00:00:24     28-AUG-16      
+        BP Key: 171   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T111210
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\5HRECKT4_1_1
+
+  List of Archived Logs in backup set 171
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    47      1410009    15-AUG-16 1435443    16-AUG-16
+  1    48      1435443    16-AUG-16 1443895    16-AUG-16
+  1    49      1443895    16-AUG-16 1478565    25-AUG-16
+  1    50      1478565    25-AUG-16 1504366    25-AUG-16
+  1    51      1504366    25-AUG-16 1531209    26-AUG-16
+  1    52      1531209    26-AUG-16 1535185    26-AUG-16
+  1    53      1535185    26-AUG-16 1535236    26-AUG-16
+  1    54      1535236    26-AUG-16 1535439    26-AUG-16
+  1    55      1535439    26-AUG-16 1535492    26-AUG-16
+  1    56      1535492    26-AUG-16 1563076    27-AUG-16
+  1    57      1563076    27-AUG-16 1586918    27-AUG-16
+  1    58      1586918    27-AUG-16 1587598    27-AUG-16
+  1    59      1587598    27-AUG-16 1587667    27-AUG-16
+  1    60      1587667    27-AUG-16 1588164    27-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+172     Full    1.17M      DISK        00:00:06     28-AUG-16      
+        BP Key: 172   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T111302
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\5LRECKU0_1_1
+  List of Datafiles in backup set 172
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  3       Full 1645415    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\UNDOTBS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+173     Full    1.02M      DISK        00:00:09     28-AUG-16      
+        BP Key: 173   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T111302
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\5MRECKU2_1_1
+  List of Datafiles in backup set 173
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  4       Full 1645418    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\USERS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+174     Full    75.63M     DISK        00:00:29     28-AUG-16      
+        BP Key: 174   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T111302
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\5KRECKTU_1_1
+  List of Datafiles in backup set 174
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  2       Full 1645414    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSAUX01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+175     Full    183.96M    DISK        00:00:44     28-AUG-16      
+        BP Key: 175   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T111302
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\5JRECKTU_1_1
+  List of Datafiles in backup set 175
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  1       Full 1645412    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSTEM01.DBF
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+176     3.50K      DISK        00:00:01     28-AUG-16      
+        BP Key: 176   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T111355
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\5NRECKVJ_1_1
+
+  List of Archived Logs in backup set 176
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    75      1645389    28-AUG-16 1645439    28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+177     Full    9.64M      DISK        00:00:02     28-AUG-16      
+        BP Key: 177   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T111357
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_28\O1_MF_S_921064437_CW4GPPBK_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1645448      Ckp time: 28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+178     Full    9.61M      DISK        00:00:02     28-AUG-16      
+        BP Key: 178   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T112932
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\C_ORCL20160828921065372
+  Control File Included: Ckp SCN: 1645850      Ckp time: 28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+179     Full    9.64M      DISK        00:00:02     28-AUG-16      
+        BP Key: 179   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T112934
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_28\O1_MF_S_921065374_CW4HMZWX_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1645857      Ckp time: 28-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+180     72.75M     DISK        00:00:23     28-AUG-16      
+        BP Key: 180   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T112939
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\5RRECLT5_1_1
+
+  List of Archived Logs in backup set 180
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    21      1163440    20-MAY-16 1195966    20-MAY-16
+  1    22      1195966    20-MAY-16 1220110    20-MAY-16
+  1    23      1220110    20-MAY-16 1240231    20-MAY-16
+  1    24      1240231    20-MAY-16 1251503    20-MAY-16
+  1    25      1251503    20-MAY-16 1261778    20-MAY-16
+  1    26      1261778    20-MAY-16 1268308    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+181     58.19M     DISK        00:00:23     28-AUG-16      
+        BP Key: 181   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T112939
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\5SRECLT6_1_1
+
+  List of Archived Logs in backup set 181
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    27      1268308    20-MAY-16 1278022    20-MAY-16
+  1    28      1278022    20-MAY-16 1299593    20-MAY-16
+  1    29      1299593    20-MAY-16 1310713    20-MAY-16
+  1    30      1310713    20-MAY-16 1314902    20-MAY-16
+  1    31      1314902    20-MAY-16 1317531    20-MAY-16
+  1    32      1317531    20-MAY-16 1320796    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+182     21.61M     DISK        00:00:26     28-AUG-16      
+        BP Key: 182   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T112939
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\5TRECLT9_1_1
+
+  List of Archived Logs in backup set 182
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    33      1320796    20-MAY-16 1340284    20-MAY-16
+  1    34      1340284    20-MAY-16 1378231    11-JUN-16
+  1    35      1378231    11-JUN-16 1399093    20-JUN-16
+  1    36      1399093    20-JUN-16 1408192    15-AUG-16
+  1    37      1408192    15-AUG-16 1408879    15-AUG-16
+  1    38      1408879    15-AUG-16 1408934    15-AUG-16
+  1    39      1408934    15-AUG-16 1409973    15-AUG-16
+  1    40      1409973    15-AUG-16 1409990    15-AUG-16
+  1    41      1409990    15-AUG-16 1409993    15-AUG-16
+  1    42      1409993    15-AUG-16 1409997    15-AUG-16
+  1    43      1409997    15-AUG-16 1410000    15-AUG-16
+  1    44      1410000    15-AUG-16 1410003    15-AUG-16
+  1    45      1410003    15-AUG-16 1410006    15-AUG-16
+  1    46      1410006    15-AUG-16 1410009    15-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+183     1.06M      DISK        00:00:10     28-AUG-16      
+        BP Key: 183   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T112939
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\60RECLU9_1_1
+
+  List of Archived Logs in backup set 183
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    72      1644501    28-AUG-16 1644986    28-AUG-16
+  1    73      1644986    28-AUG-16 1645174    28-AUG-16
+  1    74      1645174    28-AUG-16 1645389    28-AUG-16
+  1    75      1645389    28-AUG-16 1645439    28-AUG-16
+  1    76      1645439    28-AUG-16 1645898    28-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+184     64.74M     DISK        00:00:25     28-AUG-16      
+        BP Key: 184   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T112939
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\5URECLTQ_1_1
+
+  List of Archived Logs in backup set 184
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    47      1410009    15-AUG-16 1435443    16-AUG-16
+  1    48      1435443    16-AUG-16 1443895    16-AUG-16
+  1    49      1443895    16-AUG-16 1478565    25-AUG-16
+  1    50      1478565    25-AUG-16 1504366    25-AUG-16
+  1    51      1504366    25-AUG-16 1531209    26-AUG-16
+  1    52      1531209    26-AUG-16 1535185    26-AUG-16
+  1    53      1535185    26-AUG-16 1535236    26-AUG-16
+  1    54      1535236    26-AUG-16 1535439    26-AUG-16
+  1    55      1535439    26-AUG-16 1535492    26-AUG-16
+  1    56      1535492    26-AUG-16 1563076    27-AUG-16
+  1    57      1563076    27-AUG-16 1586918    27-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+185     27.56M     DISK        00:00:23     28-AUG-16      
+        BP Key: 185   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T112939
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\5VRECLTV_1_1
+
+  List of Archived Logs in backup set 185
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    58      1586918    27-AUG-16 1587598    27-AUG-16
+  1    59      1587598    27-AUG-16 1587667    27-AUG-16
+  1    60      1587667    27-AUG-16 1588164    27-AUG-16
+  1    61      1588164    27-AUG-16 1588227    27-AUG-16
+  1    62      1588227    27-AUG-16 1588358    27-AUG-16
+  1    63      1588358    27-AUG-16 1588416    27-AUG-16
+  1    64      1588416    27-AUG-16 1588741    27-AUG-16
+  1    65      1588741    27-AUG-16 1588799    27-AUG-16
+  1    66      1588799    27-AUG-16 1589199    27-AUG-16
+  1    67      1589199    27-AUG-16 1589258    27-AUG-16
+  1    68      1589258    27-AUG-16 1609321    27-AUG-16
+  1    69      1609321    27-AUG-16 1633729    28-AUG-16
+  1    70      1633729    28-AUG-16 1644440    28-AUG-16
+  1    71      1644440    28-AUG-16 1644501    28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+186     Full    1.17M      DISK        00:00:11     28-AUG-16      
+        BP Key: 186   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T113030
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\63RECLUN_1_1
+  List of Datafiles in backup set 186
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  3       Full 1645928    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\UNDOTBS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+187     Full    1.02M      DISK        00:00:12     28-AUG-16      
+        BP Key: 187   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T113030
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\64RECLUS_1_1
+  List of Datafiles in backup set 187
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  4       Full 1645937    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\USERS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+188     Full    75.63M     DISK        00:00:30     28-AUG-16      
+        BP Key: 188   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T113030
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\62RECLUN_1_1
+  List of Datafiles in backup set 188
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  2       Full 1645926    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSAUX01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+189     Full    183.96M    DISK        00:00:48     28-AUG-16      
+        BP Key: 189   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T113030
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\61RECLUN_1_1
+  List of Datafiles in backup set 189
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  1       Full 1645924    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSTEM01.DBF
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+190     13.00K     DISK        00:00:01     28-AUG-16      
+        BP Key: 190   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T113128
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\65RECM0G_1_1
+
+  List of Archived Logs in backup set 190
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    77      1645898    28-AUG-16 1645961    28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+191     Full    9.64M      DISK        00:00:01     28-AUG-16      
+        BP Key: 191   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T113130
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_28\O1_MF_S_921065490_CW4HQM8K_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1645970      Ckp time: 28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+192     Full    9.61M      DISK        00:00:02     28-AUG-16      
+        BP Key: 192   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T114728
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\C_ORCL20160828921066448
+  Control File Included: Ckp SCN: 1646399      Ckp time: 28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+193     Full    9.64M      DISK        00:00:01     28-AUG-16      
+        BP Key: 193   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T114731
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_28\O1_MF_S_921066451_CW4JON4O_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1646405      Ckp time: 28-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+194     55.67M     DISK        00:00:21     28-AUG-16      
+        BP Key: 194   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T114736
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\6ARECMUQ_1_1
+
+  List of Archived Logs in backup set 194
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    29      1299593    20-MAY-16 1310713    20-MAY-16
+  1    30      1310713    20-MAY-16 1314902    20-MAY-16
+  1    31      1314902    20-MAY-16 1317531    20-MAY-16
+  1    32      1317531    20-MAY-16 1320796    20-MAY-16
+  1    33      1320796    20-MAY-16 1340284    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+195     63.01M     DISK        00:00:21     28-AUG-16      
+        BP Key: 195   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T114736
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\69RECMUQ_1_1
+
+  List of Archived Logs in backup set 195
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    23      1220110    20-MAY-16 1240231    20-MAY-16
+  1    24      1240231    20-MAY-16 1251503    20-MAY-16
+  1    25      1251503    20-MAY-16 1261778    20-MAY-16
+  1    26      1261778    20-MAY-16 1268308    20-MAY-16
+  1    27      1268308    20-MAY-16 1278022    20-MAY-16
+  1    28      1278022    20-MAY-16 1299593    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+196     20.01M     DISK        00:00:26     28-AUG-16      
+        BP Key: 196   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T114736
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\6BRECMUS_1_1
+
+  List of Archived Logs in backup set 196
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    34      1340284    20-MAY-16 1378231    11-JUN-16
+  1    35      1378231    11-JUN-16 1399093    20-JUN-16
+  1    36      1399093    20-JUN-16 1408192    15-AUG-16
+  1    37      1408192    15-AUG-16 1408879    15-AUG-16
+  1    38      1408879    15-AUG-16 1408934    15-AUG-16
+  1    39      1408934    15-AUG-16 1409973    15-AUG-16
+  1    40      1409973    15-AUG-16 1409990    15-AUG-16
+  1    41      1409990    15-AUG-16 1409993    15-AUG-16
+  1    42      1409993    15-AUG-16 1409997    15-AUG-16
+  1    43      1409997    15-AUG-16 1410000    15-AUG-16
+  1    44      1410000    15-AUG-16 1410003    15-AUG-16
+  1    45      1410003    15-AUG-16 1410006    15-AUG-16
+  1    46      1410006    15-AUG-16 1410009    15-AUG-16
+  1    47      1410009    15-AUG-16 1435443    16-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+197     81.00K     DISK        00:00:09     28-AUG-16      
+        BP Key: 197   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T114736
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\6ERECMVQ_1_1
+
+  List of Archived Logs in backup set 197
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    76      1645439    28-AUG-16 1645898    28-AUG-16
+  1    77      1645898    28-AUG-16 1645961    28-AUG-16
+  1    78      1645961    28-AUG-16 1646447    28-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+198     54.63M     DISK        00:00:24     28-AUG-16      
+        BP Key: 198   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T114736
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\6CRECMVE_1_1
+
+  List of Archived Logs in backup set 198
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    48      1435443    16-AUG-16 1443895    16-AUG-16
+  1    49      1443895    16-AUG-16 1478565    25-AUG-16
+  1    50      1478565    25-AUG-16 1504366    25-AUG-16
+  1    51      1504366    25-AUG-16 1531209    26-AUG-16
+  1    52      1531209    26-AUG-16 1535185    26-AUG-16
+  1    53      1535185    26-AUG-16 1535236    26-AUG-16
+  1    54      1535236    26-AUG-16 1535439    26-AUG-16
+  1    55      1535439    26-AUG-16 1535492    26-AUG-16
+  1    56      1535492    26-AUG-16 1563076    27-AUG-16
+  1    57      1563076    27-AUG-16 1586918    27-AUG-16
+  1    58      1586918    27-AUG-16 1587598    27-AUG-16
+  1    59      1587598    27-AUG-16 1587667    27-AUG-16
+  1    60      1587667    27-AUG-16 1588164    27-AUG-16
+  1    61      1588164    27-AUG-16 1588227    27-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+199     27.77M     DISK        00:00:20     28-AUG-16      
+        BP Key: 199   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T114736
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\6DRECMVI_1_1
+
+  List of Archived Logs in backup set 199
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    62      1588227    27-AUG-16 1588358    27-AUG-16
+  1    63      1588358    27-AUG-16 1588416    27-AUG-16
+  1    64      1588416    27-AUG-16 1588741    27-AUG-16
+  1    65      1588741    27-AUG-16 1588799    27-AUG-16
+  1    66      1588799    27-AUG-16 1589199    27-AUG-16
+  1    67      1589199    27-AUG-16 1589258    27-AUG-16
+  1    68      1589258    27-AUG-16 1609321    27-AUG-16
+  1    69      1609321    27-AUG-16 1633729    28-AUG-16
+  1    70      1633729    28-AUG-16 1644440    28-AUG-16
+  1    71      1644440    28-AUG-16 1644501    28-AUG-16
+  1    72      1644501    28-AUG-16 1644986    28-AUG-16
+  1    73      1644986    28-AUG-16 1645174    28-AUG-16
+  1    74      1645174    28-AUG-16 1645389    28-AUG-16
+  1    75      1645389    28-AUG-16 1645439    28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+200     Full    1.17M      DISK        00:00:11     28-AUG-16      
+        BP Key: 200   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T114829
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\6HRECN0E_1_1
+  List of Datafiles in backup set 200
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  3       Full 1646473    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\UNDOTBS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+201     Full    1.02M      DISK        00:00:13     28-AUG-16      
+        BP Key: 201   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T114829
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\6IRECN0G_1_1
+  List of Datafiles in backup set 201
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  4       Full 1646477    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\USERS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+202     Full    75.63M     DISK        00:00:30     28-AUG-16      
+        BP Key: 202   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T114829
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\6GRECN0D_1_1
+  List of Datafiles in backup set 202
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  2       Full 1646471    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSAUX01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+203     Full    183.96M    DISK        00:00:47     28-AUG-16      
+        BP Key: 203   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T114829
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\6FRECN0D_1_1
+  List of Datafiles in backup set 203
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  1       Full 1646470    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSTEM01.DBF
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+204     3.50K      DISK        00:00:00     28-AUG-16      
+        BP Key: 204   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T114926
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\6JRECN26_1_1
+
+  List of Archived Logs in backup set 204
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    79      1646447    28-AUG-16 1646499    28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+205     Full    9.64M      DISK        00:00:02     28-AUG-16      
+        BP Key: 205   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T114927
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_28\O1_MF_S_921066567_CW4JS8VS_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1646508      Ckp time: 28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+206     Full    9.61M      DISK        00:00:01     28-AUG-16      
+        BP Key: 206   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T115348
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\C_ORCL20160828921066829
+  Control File Included: Ckp SCN: 1646654      Ckp time: 28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+207     Full    9.64M      DISK        00:00:01     28-AUG-16      
+        BP Key: 207   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T115351
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_28\O1_MF_S_921066831_CW4K1J7M_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1646661      Ckp time: 28-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+208     48.43M     DISK        00:00:18     28-AUG-16      
+        BP Key: 208   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115356
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\6NRECNAM_1_1
+
+  List of Archived Logs in backup set 208
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    25      1251503    20-MAY-16 1261778    20-MAY-16
+  1    26      1261778    20-MAY-16 1268308    20-MAY-16
+  1    27      1268308    20-MAY-16 1278022    20-MAY-16
+  1    28      1278022    20-MAY-16 1299593    20-MAY-16
+  1    29      1299593    20-MAY-16 1310713    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+209     52.53M     DISK        00:00:19     28-AUG-16      
+        BP Key: 209   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115356
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\6ORECNAM_1_1
+
+  List of Archived Logs in backup set 209
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    30      1310713    20-MAY-16 1314902    20-MAY-16
+  1    31      1314902    20-MAY-16 1317531    20-MAY-16
+  1    32      1317531    20-MAY-16 1320796    20-MAY-16
+  1    33      1320796    20-MAY-16 1340284    20-MAY-16
+  1    34      1340284    20-MAY-16 1378231    11-JUN-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+210     27.95M     DISK        00:00:25     28-AUG-16      
+        BP Key: 210   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115356
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\6PRECNAO_1_1
+
+  List of Archived Logs in backup set 210
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    35      1378231    11-JUN-16 1399093    20-JUN-16
+  1    36      1399093    20-JUN-16 1408192    15-AUG-16
+  1    37      1408192    15-AUG-16 1408879    15-AUG-16
+  1    38      1408879    15-AUG-16 1408934    15-AUG-16
+  1    39      1408934    15-AUG-16 1409973    15-AUG-16
+  1    40      1409973    15-AUG-16 1409990    15-AUG-16
+  1    41      1409990    15-AUG-16 1409993    15-AUG-16
+  1    42      1409993    15-AUG-16 1409997    15-AUG-16
+  1    43      1409997    15-AUG-16 1410000    15-AUG-16
+  1    44      1410000    15-AUG-16 1410003    15-AUG-16
+  1    45      1410003    15-AUG-16 1410006    15-AUG-16
+  1    46      1410006    15-AUG-16 1410009    15-AUG-16
+  1    47      1410009    15-AUG-16 1435443    16-AUG-16
+  1    48      1435443    16-AUG-16 1443895    16-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+211     41.72M     DISK        00:00:19     28-AUG-16      
+        BP Key: 211   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115356
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\6QRECNB8_1_1
+
+  List of Archived Logs in backup set 211
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    49      1443895    16-AUG-16 1478565    25-AUG-16
+  1    50      1478565    25-AUG-16 1504366    25-AUG-16
+  1    51      1504366    25-AUG-16 1531209    26-AUG-16
+  1    52      1531209    26-AUG-16 1535185    26-AUG-16
+  1    53      1535185    26-AUG-16 1535236    26-AUG-16
+  1    54      1535236    26-AUG-16 1535439    26-AUG-16
+  1    55      1535439    26-AUG-16 1535492    26-AUG-16
+  1    56      1535492    26-AUG-16 1563076    27-AUG-16
+  1    57      1563076    27-AUG-16 1586918    27-AUG-16
+  1    58      1586918    27-AUG-16 1587598    27-AUG-16
+  1    59      1587598    27-AUG-16 1587667    27-AUG-16
+  1    60      1587667    27-AUG-16 1588164    27-AUG-16
+  1    61      1588164    27-AUG-16 1588227    27-AUG-16
+  1    62      1588227    27-AUG-16 1588358    27-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+212     66.50K     DISK        00:00:05     28-AUG-16      
+        BP Key: 212   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115356
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\6SRECNBN_1_1
+
+  List of Archived Logs in backup set 212
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    77      1645898    28-AUG-16 1645961    28-AUG-16
+  1    78      1645961    28-AUG-16 1646447    28-AUG-16
+  1    79      1646447    28-AUG-16 1646499    28-AUG-16
+  1    80      1646499    28-AUG-16 1646702    28-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+213     27.78M     DISK        00:00:18     28-AUG-16      
+        BP Key: 213   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115356
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\6RRECNBE_1_1
+
+  List of Archived Logs in backup set 213
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    63      1588358    27-AUG-16 1588416    27-AUG-16
+  1    64      1588416    27-AUG-16 1588741    27-AUG-16
+  1    65      1588741    27-AUG-16 1588799    27-AUG-16
+  1    66      1588799    27-AUG-16 1589199    27-AUG-16
+  1    67      1589199    27-AUG-16 1589258    27-AUG-16
+  1    68      1589258    27-AUG-16 1609321    27-AUG-16
+  1    69      1609321    27-AUG-16 1633729    28-AUG-16
+  1    70      1633729    28-AUG-16 1644440    28-AUG-16
+  1    71      1644440    28-AUG-16 1644501    28-AUG-16
+  1    72      1644501    28-AUG-16 1644986    28-AUG-16
+  1    73      1644986    28-AUG-16 1645174    28-AUG-16
+  1    74      1645174    28-AUG-16 1645389    28-AUG-16
+  1    75      1645389    28-AUG-16 1645439    28-AUG-16
+  1    76      1645439    28-AUG-16 1645898    28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+214     Full    1.17M      DISK        00:00:09     28-AUG-16      
+        BP Key: 214   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115442
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\6VRECNC3_1_1
+  List of Datafiles in backup set 214
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  3       Full 1646726    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\UNDOTBS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+215     Full    1.02M      DISK        00:00:12     28-AUG-16      
+        BP Key: 215   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115442
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\70RECNC5_1_1
+  List of Datafiles in backup set 215
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  4       Full 1646728    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\USERS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+216     Full    75.63M     DISK        00:00:31     28-AUG-16      
+        BP Key: 216   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115442
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\6URECNC2_1_1
+  List of Datafiles in backup set 216
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  2       Full 1646724    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSAUX01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+217     Full    183.96M    DISK        00:00:49     28-AUG-16      
+        BP Key: 217   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115442
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\6TRECNC2_1_1
+  List of Datafiles in backup set 217
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  1       Full 1646723    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSTEM01.DBF
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+218     3.50K      DISK        00:00:00     28-AUG-16      
+        BP Key: 218   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115535
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\71RECNDN_1_1
+
+  List of Archived Logs in backup set 218
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    81      1646702    28-AUG-16 1646750    28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+219     Full    9.64M      DISK        00:00:01     28-AUG-16      
+        BP Key: 219   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T115537
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_28\O1_MF_S_921066937_CW4K4SXD_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1646763      Ckp time: 28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+220     Full    9.61M      DISK        00:00:02     28-AUG-16      
+        BP Key: 220   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T115809
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\C_ORCL20160828921067089
+  Control File Included: Ckp SCN: 1646865      Ckp time: 28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+221     Full    9.64M      DISK        00:00:01     28-AUG-16      
+        BP Key: 221   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T115812
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_28\O1_MF_S_921067092_CW4K9NXK_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1646872      Ckp time: 28-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+222     45.00M     DISK        00:00:13     28-AUG-16      
+        BP Key: 222   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115816
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\75RECNIQ_1_1
+
+  List of Archived Logs in backup set 222
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    27      1268308    20-MAY-16 1278022    20-MAY-16
+  1    28      1278022    20-MAY-16 1299593    20-MAY-16
+  1    29      1299593    20-MAY-16 1310713    20-MAY-16
+  1    30      1310713    20-MAY-16 1314902    20-MAY-16
+  1    31      1314902    20-MAY-16 1317531    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+223     34.90M     DISK        00:00:26     28-AUG-16      
+        BP Key: 223   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115816
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\76RECNIR_1_1
+
+  List of Archived Logs in backup set 223
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    32      1317531    20-MAY-16 1320796    20-MAY-16
+  1    33      1320796    20-MAY-16 1340284    20-MAY-16
+  1    34      1340284    20-MAY-16 1378231    11-JUN-16
+  1    35      1378231    11-JUN-16 1399093    20-JUN-16
+  1    36      1399093    20-JUN-16 1408192    15-AUG-16
+  1    37      1408192    15-AUG-16 1408879    15-AUG-16
+  1    38      1408879    15-AUG-16 1408934    15-AUG-16
+  1    39      1408934    15-AUG-16 1409973    15-AUG-16
+  1    40      1409973    15-AUG-16 1409990    15-AUG-16
+  1    41      1409990    15-AUG-16 1409993    15-AUG-16
+  1    42      1409993    15-AUG-16 1409997    15-AUG-16
+  1    43      1409997    15-AUG-16 1410000    15-AUG-16
+  1    44      1410000    15-AUG-16 1410003    15-AUG-16
+  1    45      1410003    15-AUG-16 1410006    15-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+224     45.55M     DISK        00:00:17     28-AUG-16      
+        BP Key: 224   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115816
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\77RECNJ5_1_1
+
+  List of Archived Logs in backup set 224
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    46      1410006    15-AUG-16 1410009    15-AUG-16
+  1    47      1410009    15-AUG-16 1435443    16-AUG-16
+  1    48      1435443    16-AUG-16 1443895    16-AUG-16
+  1    49      1443895    16-AUG-16 1478565    25-AUG-16
+  1    50      1478565    25-AUG-16 1504366    25-AUG-16
+  1    51      1504366    25-AUG-16 1531209    26-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+225     19.85M     DISK        00:00:21     28-AUG-16      
+        BP Key: 225   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115816
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\78RECNJ7_1_1
+
+  List of Archived Logs in backup set 225
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    52      1531209    26-AUG-16 1535185    26-AUG-16
+  1    53      1535185    26-AUG-16 1535236    26-AUG-16
+  1    54      1535236    26-AUG-16 1535439    26-AUG-16
+  1    55      1535439    26-AUG-16 1535492    26-AUG-16
+  1    56      1535492    26-AUG-16 1563076    27-AUG-16
+  1    57      1563076    27-AUG-16 1586918    27-AUG-16
+  1    58      1586918    27-AUG-16 1587598    27-AUG-16
+  1    59      1587598    27-AUG-16 1587667    27-AUG-16
+  1    60      1587667    27-AUG-16 1588164    27-AUG-16
+  1    61      1588164    27-AUG-16 1588227    27-AUG-16
+  1    62      1588227    27-AUG-16 1588358    27-AUG-16
+  1    63      1588358    27-AUG-16 1588416    27-AUG-16
+  1    64      1588416    27-AUG-16 1588741    27-AUG-16
+  1    65      1588741    27-AUG-16 1588799    27-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+226     15.00K     DISK        00:00:04     28-AUG-16      
+        BP Key: 226   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115816
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\7ARECNJP_1_1
+
+  List of Archived Logs in backup set 226
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    80      1646499    28-AUG-16 1646702    28-AUG-16
+  1    81      1646702    28-AUG-16 1646750    28-AUG-16
+  1    82      1646750    28-AUG-16 1646913    28-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+227     27.78M     DISK        00:00:13     28-AUG-16      
+        BP Key: 227   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115816
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\79RECNJL_1_1
+
+  List of Archived Logs in backup set 227
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    66      1588799    27-AUG-16 1589199    27-AUG-16
+  1    67      1589199    27-AUG-16 1589258    27-AUG-16
+  1    68      1589258    27-AUG-16 1609321    27-AUG-16
+  1    69      1609321    27-AUG-16 1633729    28-AUG-16
+  1    70      1633729    28-AUG-16 1644440    28-AUG-16
+  1    71      1644440    28-AUG-16 1644501    28-AUG-16
+  1    72      1644501    28-AUG-16 1644986    28-AUG-16
+  1    73      1644986    28-AUG-16 1645174    28-AUG-16
+  1    74      1645174    28-AUG-16 1645389    28-AUG-16
+  1    75      1645389    28-AUG-16 1645439    28-AUG-16
+  1    76      1645439    28-AUG-16 1645898    28-AUG-16
+  1    77      1645898    28-AUG-16 1645961    28-AUG-16
+  1    78      1645961    28-AUG-16 1646447    28-AUG-16
+  1    79      1646447    28-AUG-16 1646499    28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+228     Full    1.18M      DISK        00:00:11     28-AUG-16      
+        BP Key: 228   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115859
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\7DRECNK4_1_1
+  List of Datafiles in backup set 228
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  3       Full 1646938    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\UNDOTBS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+229     Full    1.02M      DISK        00:00:11     28-AUG-16      
+        BP Key: 229   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115859
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\7ERECNK8_1_1
+  List of Datafiles in backup set 229
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  4       Full 1646941    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\USERS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+230     Full    75.63M     DISK        00:00:30     28-AUG-16      
+        BP Key: 230   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115859
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\7CRECNK4_1_1
+  List of Datafiles in backup set 230
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  2       Full 1646936    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSAUX01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+231     Full    183.96M    DISK        00:00:47     28-AUG-16      
+        BP Key: 231   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115859
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\7BRECNK4_1_1
+  List of Datafiles in backup set 231
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  1       Full 1646935    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSTEM01.DBF
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+232     3.50K      DISK        00:00:01     28-AUG-16      
+        BP Key: 232   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T115954
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\7FRECNLQ_1_1
+
+  List of Archived Logs in backup set 232
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    83      1646913    28-AUG-16 1646961    28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+233     Full    9.64M      DISK        00:00:01     28-AUG-16      
+        BP Key: 233   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T115956
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_28\O1_MF_S_921067196_CW4KDX6S_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1646970      Ckp time: 28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+234     Full    9.61M      DISK        00:00:01     28-AUG-16      
+        BP Key: 234   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T120844
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\C_ORCL20160828921067725
+  Control File Included: Ckp SCN: 1647488      Ckp time: 28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+235     Full    9.64M      DISK        00:00:01     28-AUG-16      
+        BP Key: 235   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T120847
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_28\O1_MF_S_921067727_CW4KXJ8K_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1647494      Ckp time: 28-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+236     42.99M     DISK        00:00:11     28-AUG-16      
+        BP Key: 236   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T120852
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\7JRECO6M_1_1
+
+  List of Archived Logs in backup set 236
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    29      1299593    20-MAY-16 1310713    20-MAY-16
+  1    30      1310713    20-MAY-16 1314902    20-MAY-16
+  1    31      1314902    20-MAY-16 1317531    20-MAY-16
+  1    32      1317531    20-MAY-16 1320796    20-MAY-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+237     21.61M     DISK        00:00:19     28-AUG-16      
+        BP Key: 237   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T120852
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\7KRECO6M_1_1
+
+  List of Archived Logs in backup set 237
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    33      1320796    20-MAY-16 1340284    20-MAY-16
+  1    34      1340284    20-MAY-16 1378231    11-JUN-16
+  1    35      1378231    11-JUN-16 1399093    20-JUN-16
+  1    36      1399093    20-JUN-16 1408192    15-AUG-16
+  1    37      1408192    15-AUG-16 1408879    15-AUG-16
+  1    38      1408879    15-AUG-16 1408934    15-AUG-16
+  1    39      1408934    15-AUG-16 1409973    15-AUG-16
+  1    40      1409973    15-AUG-16 1409990    15-AUG-16
+  1    41      1409990    15-AUG-16 1409993    15-AUG-16
+  1    42      1409993    15-AUG-16 1409997    15-AUG-16
+  1    43      1409997    15-AUG-16 1410000    15-AUG-16
+  1    44      1410000    15-AUG-16 1410003    15-AUG-16
+  1    45      1410003    15-AUG-16 1410006    15-AUG-16
+  1    46      1410006    15-AUG-16 1410009    15-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+238     45.56M     DISK        00:00:19     28-AUG-16      
+        BP Key: 238   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T120852
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\7LRECO6T_1_1
+
+  List of Archived Logs in backup set 238
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    47      1410009    15-AUG-16 1435443    16-AUG-16
+  1    48      1435443    16-AUG-16 1443895    16-AUG-16
+  1    49      1443895    16-AUG-16 1478565    25-AUG-16
+  1    50      1478565    25-AUG-16 1504366    25-AUG-16
+  1    51      1504366    25-AUG-16 1531209    26-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+239     19.85M     DISK        00:00:21     28-AUG-16      
+        BP Key: 239   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T120852
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\7MRECO6V_1_1
+
+  List of Archived Logs in backup set 239
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    52      1531209    26-AUG-16 1535185    26-AUG-16
+  1    53      1535185    26-AUG-16 1535236    26-AUG-16
+  1    54      1535236    26-AUG-16 1535439    26-AUG-16
+  1    55      1535439    26-AUG-16 1535492    26-AUG-16
+  1    56      1535492    26-AUG-16 1563076    27-AUG-16
+  1    57      1563076    27-AUG-16 1586918    27-AUG-16
+  1    58      1586918    27-AUG-16 1587598    27-AUG-16
+  1    59      1587598    27-AUG-16 1587667    27-AUG-16
+  1    60      1587667    27-AUG-16 1588164    27-AUG-16
+  1    61      1588164    27-AUG-16 1588227    27-AUG-16
+  1    62      1588227    27-AUG-16 1588358    27-AUG-16
+  1    63      1588358    27-AUG-16 1588416    27-AUG-16
+  1    64      1588416    27-AUG-16 1588741    27-AUG-16
+  1    65      1588741    27-AUG-16 1588799    27-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+240     1.10M      DISK        00:00:07     28-AUG-16      
+        BP Key: 240   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T120852
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\7ORECO7G_1_1
+
+  List of Archived Logs in backup set 240
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    80      1646499    28-AUG-16 1646702    28-AUG-16
+  1    81      1646702    28-AUG-16 1646750    28-AUG-16
+  1    82      1646750    28-AUG-16 1646913    28-AUG-16
+  1    83      1646913    28-AUG-16 1646961    28-AUG-16
+  1    84      1646961    28-AUG-16 1647536    28-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+241     27.78M     DISK        00:00:18     28-AUG-16      
+        BP Key: 241   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T120852
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\7NRECO79_1_1
+
+  List of Archived Logs in backup set 241
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    66      1588799    27-AUG-16 1589199    27-AUG-16
+  1    67      1589199    27-AUG-16 1589258    27-AUG-16
+  1    68      1589258    27-AUG-16 1609321    27-AUG-16
+  1    69      1609321    27-AUG-16 1633729    28-AUG-16
+  1    70      1633729    28-AUG-16 1644440    28-AUG-16
+  1    71      1644440    28-AUG-16 1644501    28-AUG-16
+  1    72      1644501    28-AUG-16 1644986    28-AUG-16
+  1    73      1644986    28-AUG-16 1645174    28-AUG-16
+  1    74      1645174    28-AUG-16 1645389    28-AUG-16
+  1    75      1645389    28-AUG-16 1645439    28-AUG-16
+  1    76      1645439    28-AUG-16 1645898    28-AUG-16
+  1    77      1645898    28-AUG-16 1645961    28-AUG-16
+  1    78      1645961    28-AUG-16 1646447    28-AUG-16
+  1    79      1646447    28-AUG-16 1646499    28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+242     Full    1.23M      DISK        00:00:11     28-AUG-16      
+        BP Key: 242   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T120931
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\7RRECO7T_1_1
+  List of Datafiles in backup set 242
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  3       Full 1647558    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\UNDOTBS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+243     Full    1.02M      DISK        00:00:10     28-AUG-16      
+        BP Key: 243   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T120931
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\7SRECO81_1_1
+  List of Datafiles in backup set 243
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  4       Full 1647561    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\USERS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+244     Full    75.73M     DISK        00:00:32     28-AUG-16      
+        BP Key: 244   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T120931
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\7QRECO7S_1_1
+  List of Datafiles in backup set 244
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  2       Full 1647556    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSAUX01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+245     Full    183.96M    DISK        00:00:52     28-AUG-16      
+        BP Key: 245   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T120931
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\7PRECO7S_1_1
+  List of Datafiles in backup set 245
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  1       Full 1647554    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSTEM01.DBF
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+246     3.50K      DISK        00:00:01     28-AUG-16      
+        BP Key: 246   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T121029
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\7TRECO9L_1_1
+
+  List of Archived Logs in backup set 246
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    85      1647536    28-AUG-16 1647583    28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+247     Full    10.42M     DISK        00:00:02     28-AUG-16      
+        BP Key: 247   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T121031
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_28\O1_MF_S_921067831_CW4L0RG9_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1647592      Ckp time: 28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+248     Full    10.39M     DISK        00:00:02     28-AUG-16      
+        BP Key: 248   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T122052
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\C_ORCL20160828921068452
+  Control File Included: Ckp SCN: 1647884      Ckp time: 28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+249     Full    10.42M     DISK        00:00:01     28-AUG-16      
+        BP Key: 249   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T122055
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_28\O1_MF_S_921068455_CW4LN84B_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1647891      Ckp time: 28-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+250     41.08M     DISK        00:00:10     28-AUG-16      
+        BP Key: 250   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T122100
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\81RECOTD_1_1
+
+  List of Archived Logs in backup set 250
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    31      1314902    20-MAY-16 1317531    20-MAY-16
+  1    32      1317531    20-MAY-16 1320796    20-MAY-16
+  1    33      1320796    20-MAY-16 1340284    20-MAY-16
+  1    34      1340284    20-MAY-16 1378231    11-JUN-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+251     27.95M     DISK        00:00:17     28-AUG-16      
+        BP Key: 251   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T122100
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\82RECOTE_1_1
+
+  List of Archived Logs in backup set 251
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    35      1378231    11-JUN-16 1399093    20-JUN-16
+  1    36      1399093    20-JUN-16 1408192    15-AUG-16
+  1    37      1408192    15-AUG-16 1408879    15-AUG-16
+  1    38      1408879    15-AUG-16 1408934    15-AUG-16
+  1    39      1408934    15-AUG-16 1409973    15-AUG-16
+  1    40      1409973    15-AUG-16 1409990    15-AUG-16
+  1    41      1409990    15-AUG-16 1409993    15-AUG-16
+  1    42      1409993    15-AUG-16 1409997    15-AUG-16
+  1    43      1409997    15-AUG-16 1410000    15-AUG-16
+  1    44      1410000    15-AUG-16 1410003    15-AUG-16
+  1    45      1410003    15-AUG-16 1410006    15-AUG-16
+  1    46      1410006    15-AUG-16 1410009    15-AUG-16
+  1    47      1410009    15-AUG-16 1435443    16-AUG-16
+  1    48      1435443    16-AUG-16 1443895    16-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+252     41.70M     DISK        00:00:19     28-AUG-16      
+        BP Key: 252   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T122100
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\83RECOTJ_1_1
+
+  List of Archived Logs in backup set 252
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    49      1443895    16-AUG-16 1478565    25-AUG-16
+  1    50      1478565    25-AUG-16 1504366    25-AUG-16
+  1    51      1504366    25-AUG-16 1531209    26-AUG-16
+  1    52      1531209    26-AUG-16 1535185    26-AUG-16
+  1    53      1535185    26-AUG-16 1535236    26-AUG-16
+  1    54      1535236    26-AUG-16 1535439    26-AUG-16
+  1    55      1535439    26-AUG-16 1535492    26-AUG-16
+  1    56      1535492    26-AUG-16 1563076    27-AUG-16
+  1    57      1563076    27-AUG-16 1586918    27-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+253     27.00K     DISK        00:00:02     28-AUG-16      
+        BP Key: 253   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T122100
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\86RECOUA_1_1
+
+  List of Archived Logs in backup set 253
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    86      1647583    28-AUG-16 1647932    28-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+254     27.56M     DISK        00:00:20     28-AUG-16      
+        BP Key: 254   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T122100
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\84RECOTO_1_1
+
+  List of Archived Logs in backup set 254
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    58      1586918    27-AUG-16 1587598    27-AUG-16
+  1    59      1587598    27-AUG-16 1587667    27-AUG-16
+  1    60      1587667    27-AUG-16 1588164    27-AUG-16
+  1    61      1588164    27-AUG-16 1588227    27-AUG-16
+  1    62      1588227    27-AUG-16 1588358    27-AUG-16
+  1    63      1588358    27-AUG-16 1588416    27-AUG-16
+  1    64      1588416    27-AUG-16 1588741    27-AUG-16
+  1    65      1588741    27-AUG-16 1588799    27-AUG-16
+  1    66      1588799    27-AUG-16 1589199    27-AUG-16
+  1    67      1589199    27-AUG-16 1589258    27-AUG-16
+  1    68      1589258    27-AUG-16 1609321    27-AUG-16
+  1    69      1609321    27-AUG-16 1633729    28-AUG-16
+  1    70      1633729    28-AUG-16 1644440    28-AUG-16
+  1    71      1644440    28-AUG-16 1644501    28-AUG-16
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+255     1.46M      DISK        00:00:10     28-AUG-16      
+        BP Key: 255   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T122100
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\85RECOU2_1_1
+
+  List of Archived Logs in backup set 255
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    72      1644501    28-AUG-16 1644986    28-AUG-16
+  1    73      1644986    28-AUG-16 1645174    28-AUG-16
+  1    74      1645174    28-AUG-16 1645389    28-AUG-16
+  1    75      1645389    28-AUG-16 1645439    28-AUG-16
+  1    76      1645439    28-AUG-16 1645898    28-AUG-16
+  1    77      1645898    28-AUG-16 1645961    28-AUG-16
+  1    78      1645961    28-AUG-16 1646447    28-AUG-16
+  1    79      1646447    28-AUG-16 1646499    28-AUG-16
+  1    80      1646499    28-AUG-16 1646702    28-AUG-16
+  1    81      1646702    28-AUG-16 1646750    28-AUG-16
+  1    82      1646750    28-AUG-16 1646913    28-AUG-16
+  1    83      1646913    28-AUG-16 1646961    28-AUG-16
+  1    84      1646961    28-AUG-16 1647536    28-AUG-16
+  1    85      1647536    28-AUG-16 1647583    28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+256     Full    1.23M      DISK        00:00:08     28-AUG-16      
+        BP Key: 256   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T122134
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\89RECOUF_1_1
+  List of Datafiles in backup set 256
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  3       Full 1647952    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\UNDOTBS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+257     Full    1.02M      DISK        00:00:13     28-AUG-16      
+        BP Key: 257   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T122134
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\8ARECOUH_1_1
+  List of Datafiles in backup set 257
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  4       Full 1647955    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\USERS01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+258     Full    75.73M     DISK        00:00:32     28-AUG-16      
+        BP Key: 258   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T122134
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\88RECOUF_1_1
+  List of Datafiles in backup set 258
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  2       Full 1647950    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSAUX01.DBF
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+259     Full    183.96M    DISK        00:00:48     28-AUG-16      
+        BP Key: 259   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T122134
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\87RECOUF_1_1
+  List of Datafiles in backup set 259
+  File LV Type Ckp SCN    Ckp Time  Name
+  ---- -- ---- ---------- --------- ----
+  1       Full 1647949    28-AUG-16 C:\APP\ORACLE\ORADATA\ORCL\SYSTEM01.DBF
+
+BS Key  Size       Device Type Elapsed Time Completion Time
+------- ---------- ----------- ------------ ---------------
+260     3.50K      DISK        00:00:01     28-AUG-16      
+        BP Key: 260   Status: AVAILABLE  Compressed: YES  Tag: TAG20160828T122229
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\REFRESH\8BRECP05_1_1
+
+  List of Archived Logs in backup set 260
+  Thrd Seq     Low SCN    Low Time  Next SCN   Next Time
+  ---- ------- ---------- --------- ---------- ---------
+  1    87      1647932    28-AUG-16 1647977    28-AUG-16
+
+BS Key  Type LV Size       Device Type Elapsed Time Completion Time
+------- ---- -- ---------- ----------- ------------ ---------------
+261     Full    10.42M     DISK        00:00:02     28-AUG-16      
+        BP Key: 261   Status: AVAILABLE  Compressed: NO  Tag: TAG20160828T122231
+        Piece Name: C:\APP\ORACLE\FLASH_RECOVERY_AREA\ORCL\AUTOBACKUP\2016_08_28\O1_MF_S_921068551_CW4LQ8D4_.BKP
+  SPFILE Included: Modification time: 25-AUG-16
+  SPFILE db_unique_name: ORCL
+  Control File Included: Ckp SCN: 1647986      Ckp time: 28-AUG-16
+
+Recovery Manager complete.
