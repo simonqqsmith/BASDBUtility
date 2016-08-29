@@ -92,7 +92,7 @@ public class BASDBUtility extends JFrame
 	                    		  + prop.getProperty("recoveryPointTimeStamp") ;
 	                	 String dotLog = basedir + 
 	          					"\\scripts\\log\\" +
-	          					  "HotBackup.log";
+	          					  "HotBackup_" + System.currentTimeMillis() + ".log";
 	          			  String command[] = {"cmd", "/c", rmanCmd};
 	          			BasTextAreaOutputStream.main(command,dotLog);
 	        			System.out.println(rmanCmd);
