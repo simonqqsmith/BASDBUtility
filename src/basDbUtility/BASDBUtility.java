@@ -71,66 +71,7 @@ public class BASDBUtility extends JFrame
        t.start();
    }
    
- //This method is kept for future development should password entry be required
-   @SuppressWarnings("unused")
-private void runRefreshDBwithPassword() throws IOException{
-
-		String basedir=System.getProperty("user.dir");
-		BasGetPassword pw = new BasGetPassword(null);
-		//Get time stamp
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");    
-		String execDateTime = (sdf.format(System.currentTimeMillis()));
-		
-		//Read properties file
-		   Properties prop = new Properties();
-		   try {
-				inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
-
-				if (inputStream != null) {
-								prop.load(inputStream);
-				} else {
-					throw new FileNotFoundException("property file '" + propFileName + "' not found in the classpath");
-				}
-
-				} catch (Exception e) {
-				System.out.println("Exception: " + e);
-			} finally {
-				inputStream.close();
-			}
-		   @SuppressWarnings("static-access")
-		   
-       Thread t = new Thread() {
-           public void run() {
-               synchronized(pw.lock) {
-               	pw.main(null);
-                       try {
-                           pw.lock.wait();
-                       } catch (InterruptedException e2) {
-                           e2.printStackTrace();
-                       }
-                     String inputPasswd = pw.getPasswd();
-                     String rmanCmd = "set ORACLE_SID=" + prop.getProperty("oracleSid")
-            		 + " && call "
-            		 + prop.getProperty("oracleHome")
-            		 + "\\bin\\rman.exe target / " 
-                   		  +" cmdfile=" 
-                   		  + basedir 
-                   		  + "\\scripts\\hot_backup.rman '" 
-                   		  + prop.getProperty("backupTargetLocation") 
-                   		  + "' '" 
-                   		  + prop.getProperty("recoveryPointTimeStamp") 
-                   		  + "'" ;
-               	 String dotLog = basedir + 
-         					"\\scripts\\log\\" +
-         					  "Refresh_" + execDateTime + ".log";
-         			  String command[] = {"cmd", "/c", rmanCmd};
-         			BasTextAreaOutputStream.main(command,dotLog);
-               }
-           }
-       };
-       t.start();
-   }
-   
+    
    private void runRefreshDB() throws IOException{
 
 		String basedir=System.getProperty("user.dir");
