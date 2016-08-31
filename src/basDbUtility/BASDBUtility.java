@@ -68,7 +68,13 @@ public class BASDBUtility extends JFrame
          			BasTextAreaOutputStream.main(command,dotLog);
            }
        };
-       t.start();
+     	if (JOptionPane.showConfirmDialog(null, "Are you sure that you want to backup " + prop.getProperty("oracleSid") + " online?",
+                "Action check",
+    	        JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+            t.start();
+    	} else {
+    		JOptionPane.showMessageDialog(null,"Action cancelled.");
+    	}
    }
    
     
@@ -135,7 +141,13 @@ public class BASDBUtility extends JFrame
         			BasTextAreaOutputStream.main(command,dotLog);
           }
       };
-      t.start();
+    	if (JOptionPane.showConfirmDialog(null, "Are you sure that you want to refresh the data in " + prop.getProperty("oracleSid") + " ?",
+                "Action check",
+    	        JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+            t.start();
+    	} else {
+    		JOptionPane.showMessageDialog(null,"Action cancelled.");
+    	}
   }
    
    private void runColdBackup() throws IOException{
@@ -182,7 +194,13 @@ public class BASDBUtility extends JFrame
          			BasTextAreaOutputStream.main(command,dotLog);
            }
        };
-       t.start();
+      	if (JOptionPane.showConfirmDialog(null, "Are you sure that you want to shutdown and backup " + prop.getProperty("oracleSid") + " ?",
+                "Action check",
+    	        JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+            t.start();
+    	} else {
+    		JOptionPane.showMessageDialog(null,"Action cancelled.");
+    	}
    }
    
    private void runRestoreDB() throws IOException{
@@ -234,7 +252,13 @@ public class BASDBUtility extends JFrame
          			BasTextAreaOutputStream.main(command,dotLog);
            }
        };
-       t.start();
+   	if (JOptionPane.showConfirmDialog(null, "Are you sure that you want to restore " + prop.getProperty("oracleSid") + " ?",
+            "Action check",
+	        JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+        t.start();
+	} else {
+		JOptionPane.showMessageDialog(null,"Action cancelled.");
+	}
    }
      
    public BASDBUtility() throws IOException
@@ -331,6 +355,13 @@ public class BASDBUtility extends JFrame
    
     public static void main( String args[] ) throws IOException
    {
-		new BASDBUtility();
+    	if (JOptionPane.showConfirmDialog(null, "Has config.properties been configured for your system?",
+                "Configuration check",
+    	        JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+    		new BASDBUtility();
+    	} else {
+    		JOptionPane.showMessageDialog(null,"Please configure config.properties before trying again. Exiting application.");
+    	}
+  	
    }
 }  

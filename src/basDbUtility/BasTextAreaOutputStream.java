@@ -47,6 +47,8 @@ public class BasTextAreaOutputStream extends JPanel {
           e1.printStackTrace();
       }
       System.out.println("Process complete. The output has been logged at " + dotLog);
+	  JOptionPane.showMessageDialog(null,"Process complete, please review logs.");
+
    }
  
    static void createAndShowGui() {
