@@ -1,4 +1,3 @@
-connect target /
 sql 'alter system set dbwr_io_slaves=4 scope=spfile';
 sql 'alter system checkpoint';
 shutdown immediate;

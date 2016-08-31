@@ -1,0 +1,17 @@
+shutdown immediate;
+startup pfile='&1' nomount;
+run
+{
+ALLOCATE CHANNEL disk1 DEVICE TYPE DISK FORMAT '&3\%U';
+ALLOCATE CHANNEL disk2 DEVICE TYPE DISK FORMAT '&3\%U';
+ALLOCATE CHANNEL disk3 DEVICE TYPE DISK FORMAT '&3\%U';
+ALLOCATE CHANNEL disk4 DEVICE TYPE DISK FORMAT '&3\%U';
+restore controlfile from '&2';
+alter database mount;
+restore database;
+RELEASE CHANNEL disk1;
+RELEASE CHANNEL disk2;
+RELEASE CHANNEL disk3;
+RELEASE CHANNEL disk4;
+alter database open resetlogs;
+}
