@@ -56,15 +56,17 @@ public class BASDBUtility extends JFrame
                     		 + " && call "
                     		 + prop.getProperty("oracleHome")
                     		 + "\\bin\\rman.exe target / "
-                   		  +" cmdfile=" 
+                   		  +" cmdfile='\"" 
                    		  + basedir 
-                   		  + "\\scripts\\hot_backup.rman '" 
+                   		  + "\"\\scripts\\hot_backup.rman' '" 
                    		  + prop.getProperty("backupTargetLocation") 
                    		  + "' " ;
                	 String dotLog = basedir + 
          					"\\scripts\\log\\" +
          					  "HotBackup_" + execDateTime + ".log";
          			  String command[] = {"cmd", "/c", rmanCmd};
+         			 //System.out.println(rmanCmd);
+         			//System.out.println(dotLog);
          			BasTextAreaOutputStream.main(command,dotLog);
            }
        };
@@ -108,18 +110,18 @@ public class BASDBUtility extends JFrame
                     + " && set NLS_DATE_FORMAT=" + prop.getProperty("nlsDateFormat")
                     + " && call "
               		 + prop.getProperty("oracleHome")
-              		 + "\\bin\\sqlplus.exe -s /nolog" 
-                     		  +" @" 
+              		 + "\\bin\\sqlplus.exe /nolog" 
+                     		  +" @\"" 
                      		  + basedir 
-                     		  + "\\scripts\\nomountdb.sql '" 
+                     		  + "\"\\scripts\\nomountdb.sql '" 
                      		  + prop.getProperty("restorePfile") 
                      		  + "' " 
                      		  + " && call "
            		 + prop.getProperty("oracleHome")
            		 + "\\bin\\rman.exe AUXILIARY / " 
-                  		  +" cmdfile=" 
+                  		  +" cmdfile='\"" 
                   		  + basedir 
-                  		  + "\\scripts\\refreshDB.rman '" 
+                  		  + "\"\\scripts\\refreshDB.rman' '" 
                   		  + prop.getProperty("restorePfile") 
                   		  + "' '" 
                   		  + prop.getProperty("dataFileNewName") 
@@ -181,9 +183,9 @@ public class BASDBUtility extends JFrame
             		 + " && call "
             		 + prop.getProperty("oracleHome")
             		 + "\\bin\\rman.exe target / " 
-                   		  +" cmdfile=" 
+                   		  +" cmdfile='\"" 
                    		  + basedir 
-                   		  + "\\scripts\\coldbackup.rman '" 
+                   		  + "\"\\scripts\\coldbackup.rman' '" 
                    		  + prop.getProperty("backupTargetLocation") 
                    		  + "' " 
                    		  + execDateTime ;
@@ -234,9 +236,9 @@ public class BASDBUtility extends JFrame
       		 + " && call "
       		 + prop.getProperty("oracleHome")
       		 + "\\bin\\rman.exe target / " 
-             		  +" cmdfile=" 
+             		  +" cmdfile='\"" 
              		  + basedir 
-             		  + "\\scripts\\RestoreDB.rman '" 
+             		  + "\"\\scripts\\RestoreDB.rman' '" 
              		  + prop.getProperty("restorePfile") 
              		  + "' " 
              		  + "\\scripts\\RestoreDB.rman '" 
