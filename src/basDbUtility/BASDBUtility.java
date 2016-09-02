@@ -35,7 +35,7 @@ public class BASDBUtility extends JFrame
 		//Read properties file
 		   Properties prop = new Properties();
 		   try {
-				inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
+			  inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
 
 				if (inputStream != null) {
 								prop.load(inputStream);
@@ -55,14 +55,14 @@ public class BASDBUtility extends JFrame
                + " && set NLS_DATE_FORMAT=" + prop.getProperty("nlsDateFormat")
                     		 + " && call "
                     		 + prop.getProperty("oracleHome")
-                    		 + "\\bin\\rman.exe target / "
+                    		 + "/bin/rman.exe target / "
                    		  +" cmdfile='\"" 
                    		  + basedir 
-                   		  + "\"\\scripts\\hot_backup.rman' '" 
+                   		  + "\"/scripts/hot_backup.rman' '" 
                    		  + prop.getProperty("backupTargetLocation") 
                    		  + "' " ;
                	 String dotLog = basedir + 
-         					"\\scripts\\log\\" +
+         					"/scripts/log/" +
          					  "HotBackup_" + execDateTime + ".log";
          			  String command[] = {"cmd", "/c", rmanCmd};
          			 //System.out.println(rmanCmd);
@@ -110,18 +110,18 @@ public class BASDBUtility extends JFrame
                     + " && set NLS_DATE_FORMAT=" + prop.getProperty("nlsDateFormat")
                     + " && call "
               		 + prop.getProperty("oracleHome")
-              		 + "\\bin\\sqlplus.exe /nolog" 
+              		 + "/bin/sqlplus.exe /nolog" 
                      		  +" @\"" 
                      		  + basedir 
-                     		  + "\"\\scripts\\nomountdb.sql '" 
+                     		  + "\"/scripts/nomountdb.sql '" 
                      		  + prop.getProperty("restorePfile") 
                      		  + "' " 
                      		  + " && call "
            		 + prop.getProperty("oracleHome")
-           		 + "\\bin\\rman.exe AUXILIARY / " 
+           		 + "/bin/rman.exe AUXILIARY / " 
                   		  +" cmdfile='\"" 
                   		  + basedir 
-                  		  + "\"\\scripts\\refreshDB.rman' '" 
+                  		  + "\"/scripts/refreshDB.rman' '" 
                   		  + prop.getProperty("restorePfile") 
                   		  + "' '" 
                   		  + prop.getProperty("dataFileNewName") 
@@ -137,9 +137,10 @@ public class BASDBUtility extends JFrame
                   		+ prop.getProperty("dbLogFileDest12")
                   		+ "'";
               	 String dotLog = basedir + 
-        					"\\scripts\\log\\" +
+        					"/scripts/log/" +
         					  "Refresh_" + execDateTime + ".log";
         			  String command[] = {"cmd", "/c", rmanCmd};
+        			 // System.out.println(rmanCmd);
         			BasTextAreaOutputStream.main(command,dotLog);
           }
       };
@@ -182,15 +183,15 @@ public class BASDBUtility extends JFrame
                      + " && set NLS_DATE_FORMAT=" + prop.getProperty("nlsDateFormat")
             		 + " && call "
             		 + prop.getProperty("oracleHome")
-            		 + "\\bin\\rman.exe target / " 
+            		 + "/bin/rman.exe target / " 
                    		  +" cmdfile='\"" 
                    		  + basedir 
-                   		  + "\"\\scripts\\coldbackup.rman' '" 
+                   		  + "\"/scripts/coldbackup.rman' '" 
                    		  + prop.getProperty("backupTargetLocation") 
                    		  + "' " 
                    		  + execDateTime ;
                	 String dotLog = basedir + 
-         					"\\scripts\\log\\" +
+         					"/scripts/log/" +
          					  "ColdBackup_" + execDateTime + ".log";
          			  String command[] = {"cmd", "/c", rmanCmd};
          			BasTextAreaOutputStream.main(command,dotLog);
@@ -235,22 +236,21 @@ public class BASDBUtility extends JFrame
                + " && set NLS_DATE_FORMAT=" + prop.getProperty("nlsDateFormat")
       		 + " && call "
       		 + prop.getProperty("oracleHome")
-      		 + "\\bin\\rman.exe target / " 
+      		 + "/bin/rman.exe target / " 
              		  +" cmdfile='\"" 
              		  + basedir 
-             		  + "\"\\scripts\\RestoreDB.rman' '" 
+             		  + "\"/scripts/RestoreDB.rman' '" 
              		  + prop.getProperty("restorePfile") 
-             		  + "' " 
-             		  + "\\scripts\\RestoreDB.rman '" 
+             		  + "' '" 
              		  + prop.getProperty("restoreCfile") 
-             		  + "' " 
-             		  + "\\scripts\\RestoreDB.rman '" 
+             		  + "' '" 
              		  + prop.getProperty("backupSourceLocation") 
              		  + "'" ;
                	 String dotLog = basedir + 
-         					"\\scripts\\log\\" +
+         					"/scripts/log/" +
          					  "Restore_" + execDateTime + ".log";
          			  String command[] = {"cmd", "/c", rmanCmd};
+         			 //System.out.println(rmanCmd);
          			BasTextAreaOutputStream.main(command,dotLog);
            }
        };
