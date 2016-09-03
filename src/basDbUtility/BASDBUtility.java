@@ -27,13 +27,13 @@ public class BASDBUtility extends JFrame
      
    private void runHotBackup() throws IOException{
 
-		String basedir=System.getProperty("user.dir");
+		final String basedir=System.getProperty("user.dir");
 		//Get time stamp
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");    
-		String execDateTime = (sdf.format(System.currentTimeMillis()));
+		final String execDateTime = (sdf.format(System.currentTimeMillis()));
 		
 		//Read properties file
-		   Properties prop = new Properties();
+		   final Properties prop = new Properties();
 		   try {
 			  inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
 
@@ -82,13 +82,13 @@ public class BASDBUtility extends JFrame
     
    private void runRefreshDB() throws IOException{
 
-		String basedir=System.getProperty("user.dir");
+		final String basedir=System.getProperty("user.dir");
 		//Get time stamp
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");    
-		String execDateTime = (sdf.format(System.currentTimeMillis()));
+		final String execDateTime = (sdf.format(System.currentTimeMillis()));
 		
 		//Read properties file
-		   Properties prop = new Properties();
+		   final Properties prop = new Properties();
 		   try {
 				inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
 
@@ -155,13 +155,13 @@ public class BASDBUtility extends JFrame
    
    private void runColdBackup() throws IOException{
 
-		String basedir=System.getProperty("user.dir");
+		final String basedir=System.getProperty("user.dir");
 		//Get time stamp
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");    
-		String execDateTime = (sdf.format(System.currentTimeMillis()));
+		final String execDateTime = (sdf.format(System.currentTimeMillis()));
 		
 		//Read properties file
-		   Properties prop = new Properties();
+		   final Properties prop = new Properties();
 		   try {
 				inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
 
@@ -208,13 +208,13 @@ public class BASDBUtility extends JFrame
    
    private void runRestoreDB() throws IOException{
 
-		String basedir=System.getProperty("user.dir");
+		final String basedir=System.getProperty("user.dir");
 		//Get time stamp
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");    
-		String execDateTime = (sdf.format(System.currentTimeMillis()));
+		final String execDateTime = (sdf.format(System.currentTimeMillis()));
 		
 		//Read properties file
-		   Properties prop = new Properties();
+		   final Properties prop = new Properties();
 		   try {
 				inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
 
